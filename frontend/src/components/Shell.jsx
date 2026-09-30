@@ -144,15 +144,21 @@ export default function Shell({ children }) {
       {/* Main Content Area */}
       <main className="main">
         <header className="topbar">
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <div className="topbar-left" style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
             <button
-              className="mobile-toggle icon-btn"
+              className="mobile-toggle menu-btn-extreme-left"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle navigation menu"
+              title="Open navigation menu"
             >
-              Menu
+              <span className="hamburger-box">
+                <span className="hamburger-line" />
+                <span className="hamburger-line" />
+                <span className="hamburger-line" />
+              </span>
+              <span className="menu-text">Menu</span>
             </button>
-            <div>
+            <div className="topbar-headings">
               <span className="eyebrow">NATIONAL HEALTH RESOURCE NETWORK</span>
               <h1>Predict. Share. Respond.</h1>
             </div>

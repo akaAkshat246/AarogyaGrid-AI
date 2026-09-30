@@ -223,10 +223,57 @@ a {
   position: sticky;
   top: 0;
   z-index: 50;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.02);
 }
 
-.mobile-toggle {
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.menu-btn-extreme-left {
   display: none;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 13px;
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--ink);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.menu-btn-extreme-left:hover {
+  background: #ebe9de;
+  border-color: var(--muted);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.hamburger-box {
+  width: 14px;
+  height: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hamburger-line {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--ink);
+  border-radius: 2px;
+}
+
+.menu-text {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
 }
 
 .eyebrow {
@@ -255,22 +302,29 @@ a {
   padding: 7px 12px;
   border-radius: 20px;
   font-weight: 600;
+  white-space: nowrap;
 }
 
 .icon-btn {
   border: 1px solid var(--line);
   background: #fff;
-  border-radius: 10px;
-  width: 36px;
+  border-radius: 8px;
+  min-width: 36px;
   height: 36px;
-  display: grid;
-  place-items: center;
-  color: #555;
-  font-size: 14px;
+  padding: 0 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink);
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
 }
 
 .icon-btn:hover {
   background: #f7f6f0;
+  border-color: var(--muted);
   color: #111;
 }
 
@@ -1089,13 +1143,16 @@ th {
     margin-left: 0;
   }
 
-  .mobile-toggle {
-    display: grid;
-    place-items: center;
+  .mobile-toggle, .menu-btn-extreme-left {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
   }
 
   .topbar {
-    padding: 14px 20px;
+    padding: 12px 18px;
+    height: auto;
+    min-height: 70px;
   }
 
   .content {
@@ -1128,8 +1185,41 @@ th {
 
 /* Mobile Screens (< 600px) */
 @media (max-width: 600px) {
+  .topbar {
+    padding: 10px 14px;
+  }
+
+  .topbar-left {
+    gap: 10px;
+  }
+
+  .topbar-headings .eyebrow {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
   .topbar h1 {
-    font-size: 17px;
+    font-size: 15px;
+    margin: 1px 0 0;
+  }
+
+  .top-actions .live {
+    display: none;
+  }
+
+  .top-actions {
+    gap: 6px;
+  }
+
+  .icon-btn {
+    padding: 0 8px;
+    font-size: 10px;
+    height: 32px;
+  }
+
+  .menu-btn-extreme-left {
+    padding: 6px 10px;
+    font-size: 10px;
   }
 
   .page-title {
