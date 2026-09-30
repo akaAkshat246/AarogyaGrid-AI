@@ -49,14 +49,14 @@ export default function Copilot() {
         desc="Grounded operational intelligence assistant answering questions based strictly on live system telemetry."
         action={
           <button className="secondary" onClick={handleClear}>
-            ⟲ Clear Chat
+            Clear Chat
           </button>
         }
       />
 
       <div className="copilot card">
         <div className="chat-head">
-          <div className="copilot-avatar">✦</div>
+          <div className="copilot-avatar" style={{ fontSize: '11px', fontWeight: 'bold' }}>AI</div>
           <div>
             <b>Grounded Health Copilot</b>
             <small>Gemini AI · live operational telemetry aware</small>
@@ -69,16 +69,16 @@ export default function Copilot() {
         {/* Quick Suggestion Chips */}
         <div className="chips">
           <button onClick={() => send('Which centres are at highest shortage risk in the next 24 hours?')}>
-            🚨 Which centres are at risk?
+            Which centres are at risk?
           </button>
           <button onClick={() => send('How should we prepare for a dengue outbreak surge in East Delhi and Ghaziabad?')}>
-            🦟 Dengue Outbreak Prep?
+            Dengue Outbreak Prep?
           </button>
           <button onClick={() => send('Where can we safely source Insulin Glargine without creating a deficit at the donor?')}>
-            💉 Find Safe Insulin Donor
+            Find Safe Insulin Donor
           </button>
           <button onClick={() => send('What is the current bed occupancy status across Gautam Buddha Nagar PHCs?')}>
-            🛏️ Bed Capacity Status
+            Bed Capacity Status
           </button>
         </div>
 
@@ -91,7 +91,7 @@ export default function Copilot() {
           ))}
           {loading && (
             <div className="bubble ai" style={{ color: '#888', fontStyle: 'italic' }}>
-              ✦ Gemini is analyzing real-time PHC telemetry…
+              Gemini is analyzing real-time PHC telemetry…
             </div>
           )}
         </div>
@@ -111,7 +111,7 @@ export default function Copilot() {
             disabled={loading}
           />
           <button type="submit" className="primary" disabled={loading || !input.trim()}>
-            {loading ? 'Sending…' : 'Send ↑'}
+            {loading ? 'Sending…' : 'Send'}
           </button>
         </form>
       </div>

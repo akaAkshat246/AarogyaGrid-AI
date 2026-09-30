@@ -102,8 +102,8 @@ Executes one round of Federated Averaging (FedAvg) across 3 regional nodes.
 * **Default Zoom:** `11`
 
 ### Pin Color Legend for PHC Markers:
-* 🟢 **HEALTHY / Stable:** `#10b981` (Stock adequate >5 days, Beds <70%)
-* 🟡 **WATCH:** `#f59e0b` (Stock 3–5 days, Beds 70–85%)
-* 🟠 **HIGH RISK:** `#f97316` (Stock 2–3 days, Beds 85–92%)
-* 🔴 **CRITICAL:** `#f43f5e` (Stockout <2 days, Beds >92%)
+* **HEALTHY / Stable:** `#10b981` (Stock adequate >5 days, Beds <70%)
+* **WATCH:** `#f59e0b` (Stock 3–5 days, Beds 70–85%)
+* **HIGH RISK:** `#f97316` (Stock 2–3 days, Beds 85–92%)
+* **CRITICAL:** `#f43f5e` (Stockout <2 days, Beds >92%)
 

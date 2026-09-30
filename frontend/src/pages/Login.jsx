@@ -182,7 +182,7 @@ export default function Login() {
         <div className="or"><span />or<span /></div>
 
         <button className="demo-btn" onClick={() => { demo(); nav('/dashboard'); }}>
-          <span>◉</span> Explore Demo Website <small>No registration required</small>
+          Explore Demo Website <small>No registration required</small>
         </button>
 
         <p className="auth-foot">

@@ -120,10 +120,19 @@ a {
   color: var(--ink);
 }
 
-.sidebar nav a span {
-  width: 20px;
-  text-align: center;
-  font-size: 15px;
+.sidebar nav a .nav-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--muted);
+  display: inline-block;
+  margin-right: 4px;
+  transition: all 0.2s ease;
+}
+
+.sidebar nav a.active .nav-dot {
+  background: var(--sage);
+  transform: scale(1.3);
 }
 
 .sidebar nav a.active {

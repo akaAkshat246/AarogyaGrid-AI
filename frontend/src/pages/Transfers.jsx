@@ -119,7 +119,7 @@ export default function Transfers() {
               <h3>{transfer.fromName}</h3>
               <small>Safe Surplus · {transfer.donorSurplusAfter} units remaining after dispatch</small>
             </div>
-            <div className="route-arrow">→</div>
+            <div className="route-arrow">to</div>
             <div>
               <span>RECIPIENT DEFICIT CENTRE</span>
               <h3>{transfer.toName}</h3>
@@ -160,14 +160,14 @@ export default function Transfers() {
                   disabled={loading}
                   onClick={() => advanceStatus('CANCELLED')}
                 >
-                  ✕ Reject Transfer
+                  Reject Transfer
                 </button>
                 <button
                   className="primary"
                   disabled={loading}
                   onClick={() => advanceStatus('APPROVED')}
                 >
-                  ✓ Approve Transfer
+                  Approve Transfer
                 </button>
               </>
             )}
@@ -178,7 +178,7 @@ export default function Transfers() {
                 disabled={loading}
                 onClick={() => advanceStatus('IN_TRANSIT')}
               >
-                🚚 Dispatch Logistics (In Transit) →
+                Dispatch Logistics (In Transit)
               </button>
             )}
 
@@ -188,19 +188,19 @@ export default function Transfers() {
                 disabled={loading}
                 onClick={() => advanceStatus('COMPLETED')}
               >
-                🏁 Mark Received & Completed ✓
+                Mark Received & Completed
               </button>
             )}
 
             {transfer.status === 'COMPLETED' && (
               <span style={{ color: 'var(--sage)', fontWeight: 'bold', fontSize: '13px' }}>
-                ✓ Resource successfully delivered and inventory updated!
+                Resource successfully delivered and inventory updated.
               </span>
             )}
 
             {transfer.status === 'CANCELLED' && (
               <span style={{ color: '#e53e3e', fontWeight: 'bold', fontSize: '13px' }}>
-                ✕ Transfer order cancelled by administrator.
+                Transfer order cancelled by administrator.
               </span>
             )}
           </div>
@@ -301,7 +301,7 @@ export default function Transfers() {
                   Cancel
                 </button>
                 <button type="submit" className="primary" style={{ flex: 1 }} disabled={loading}>
-                  {loading ? 'Finding Donor…' : '🔍 Find & Propose Transfer'}
+                  {loading ? 'Finding Donor…' : 'Find & Propose Transfer'}
                 </button>
               </div>
             </form>

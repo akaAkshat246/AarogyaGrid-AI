@@ -19,7 +19,7 @@ try {
   } catch (error) {
     if (env.skipAuth) {
       console.warn(`[Notice] ${error.message}`);
-      console.warn('⚡ Initializing local in-memory store with synthetic PHC fixtures.');
+      console.warn('[Info] Initializing local in-memory store with synthetic PHC fixtures.');
       store = memoryStore();
       auth = { verifyIdToken: async () => ({ uid: 'local-dev-user' }) };
 
@@ -50,7 +50,7 @@ try {
               nursesPresent: Math.max(2, (p.nurses || 8) - 1)
             });
           }
-          console.log(`✓ Preloaded ${phcs.length} PHC facilities into local memory store.`);
+          console.log(`[Loaded] Preloaded ${phcs.length} PHC facilities into local memory store.`);
         }
         if (existsSync(invPath)) {
           const inv = JSON.parse(readFileSync(invPath, 'utf8'));
@@ -65,7 +65,7 @@ try {
             });
             count++;
           }
-          console.log(`✓ Preloaded ${count} medicine inventory items.`);
+          console.log(`[Loaded] Preloaded ${count} medicine inventory items.`);
         }
       } catch (seedErr) {
         console.warn('Fixture seeding notice:', seedErr.message);
@@ -77,8 +77,8 @@ try {
 
   const app = createApp({ store, auth, config: env, predict: createAIService(env) });
   const server = app.listen(env.PORT, env.HOST, () => {
-    console.log(`🚀 AarogyaGrid Backend API live at: http://${env.HOST}:${env.PORT}`);
-    if (env.skipAuth) console.log('🛡️  Local development mode active (Auth bypass: ON)');
+    console.log(`[Server Live] AarogyaGrid Backend API live at: http://${env.HOST}:${env.PORT}`);
+    if (env.skipAuth) console.log('[Dev Mode] Local development mode active (Auth bypass: ON)');
   });
   server.on('error', error => { console.error(error.message); process.exitCode = 1; });
   for (const signal of ['SIGINT', 'SIGTERM']) process.on(signal, () => {

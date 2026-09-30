@@ -42,7 +42,7 @@ class PubSubAlertDispatcher:
             "topic": self.topic_name,
             "alert": alert,
             "fcmNotification": {
-                "title": f"🚨 {alert.get('severity', 'ALERT')}: {alert.get('phcId')}",
+                "title": f"[{alert.get('severity', 'ALERT')}]: {alert.get('phcId')}",
                 "body": alert.get("message", "Healthcare resource threshold exceeded."),
                 "priority": "high" if alert.get("severity") == "CRITICAL" else "normal"
             }

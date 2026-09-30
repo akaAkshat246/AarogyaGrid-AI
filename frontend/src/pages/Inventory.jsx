@@ -117,7 +117,7 @@ export default function Inventory() {
         desc="Live tracking of pharmaceutical stocks, projected burn rates, and shortage indicators."
         action={
           <button className="primary" onClick={() => setIsAddOpen(true)}>
-            + Add / Restock Medicine
+            Add / Restock Medicine
           </button>
         }
       />
@@ -131,7 +131,7 @@ export default function Inventory() {
 
           <div style={{ marginLeft: 'auto', display: 'flex', gap: '10px' }}>
             <input
-              placeholder="⌕  Filter medicine..."
+              placeholder="Filter medicine..."
               value={search}
               onChange={e => setSearch(e.target.value)}
               style={{ padding: '8px 12px', border: '1px solid var(--line)', borderRadius: '8px', fontSize: '11px' }}
@@ -294,7 +294,7 @@ export default function Inventory() {
                   Cancel
                 </button>
                 <button type="submit" className="primary" style={{ flex: 1 }} disabled={loading}>
-                  {loading ? 'Saving…' : '✓ Add Inventory Item'}
+                  {loading ? 'Saving…' : 'Add Inventory Item'}
                 </button>
               </div>
             </form>

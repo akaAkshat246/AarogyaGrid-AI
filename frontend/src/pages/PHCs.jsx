@@ -125,17 +125,17 @@ export default function PHCs() {
       <div className="toolbar" style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', marginBottom: '20px' }}>
         <input
           className="search"
-          placeholder="⌕  Search by centre name, district or state..."
+          placeholder="Search by centre name, district or state..."
           value={search}
           onChange={e => setSearch(e.target.value)}
           style={{ minWidth: '280px', flex: '1' }}
         />
         <select value={statusFilter} onChange={e => setStatusFilter(e.target.value)}>
           <option value="ALL">All Statuses</option>
-          <option value="CRITICAL">🚨 CRITICAL Only</option>
-          <option value="HIGH_RISK">🟠 HIGH_RISK</option>
-          <option value="WATCH">🟡 WATCH</option>
-          <option value="HEALTHY">🟢 HEALTHY</option>
+          <option value="CRITICAL">CRITICAL Only</option>
+          <option value="HIGH_RISK">HIGH RISK</option>
+          <option value="WATCH">WATCH</option>
+          <option value="HEALTHY">HEALTHY</option>
         </select>
         <select value={districtFilter} onChange={e => setDistrictFilter(e.target.value)}>
           <option value="ALL">All Districts</option>
@@ -155,7 +155,7 @@ export default function PHCs() {
             style={{ cursor: 'pointer' }}
           >
             <div className="phc-top">
-              <div className="pin">⌖</div>
+              <div className="pin" style={{ fontSize: '11px', fontWeight: 'bold' }}>PHC</div>
               <Badge>{p.status || 'HEALTHY'}</Badge>
             </div>
             <h3>{p.name}</h3>
@@ -173,7 +173,7 @@ export default function PHCs() {
             </div>
 
             <div className="card-link" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <span>View details →</span>
+              <span>View details</span>
               <small style={{ color: '#aaa', fontSize: '9px' }}>Lat: {p.latitude?.toFixed(2)}</small>
             </div>
           </div>
@@ -232,10 +232,10 @@ export default function PHCs() {
 
             <div style={{ display: 'flex', gap: '10px', marginTop: '20px' }}>
               <Link to="/predictions" className="primary" style={{ flex: 1, textAlign: 'center' }}>
-                Run AI Demand Forecast ↗
+                Run AI Demand Forecast
               </Link>
               <Link to="/inventory" className="secondary" style={{ flex: 1, textAlign: 'center' }}>
-                View Medicine Stock →
+                View Medicine Stock
               </Link>
             </div>
 
@@ -374,7 +374,7 @@ export default function PHCs() {
                   Cancel
                 </button>
                 <button type="submit" className="primary" style={{ flex: 1 }} disabled={formLoading}>
-                  {formLoading ? 'Saving…' : '✓ Register PHC'}
+                  {formLoading ? 'Saving…' : 'Register PHC'}
                 </button>
               </div>
             </form>

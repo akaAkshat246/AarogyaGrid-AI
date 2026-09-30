@@ -77,7 +77,7 @@ def run_demo():
     print_header("Step 3: Automated Early Warning Alert")
     alert = risk_engine.assess_medicine_risk(forecast)
     saved_alert = store.create_alert(alert.model_dump())
-    print(f"[🚨 ALERT GENERATED] Severity: {saved_alert['severity']}")
+    print(f"[ALERT GENERATED] Severity: {saved_alert['severity']}")
     print(f"Message: {saved_alert['message']}")
     time.sleep(1.5)
 
@@ -129,7 +129,7 @@ def run_demo():
         status=TransferStatus.APPROVED.value,
         approved_by="DistrictAdmin-GautamBuddhaNagar"
     )
-    print(f"[✅ ORDER APPROVED] Status: {approved['status']} | Approved By: {approved['approvedBy']}")
+    print(f"[ORDER APPROVED] Status: {approved['status']} | Approved By: {approved['approvedBy']}")
     print(f"Logistics status: In-transit dispatch initiated. Predicted crisis PREVENTED!")
     time.sleep(1.5)
 

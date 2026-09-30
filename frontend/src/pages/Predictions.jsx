@@ -79,7 +79,7 @@ export default function Predictions() {
         desc="Ridge Regression ML time-series model predicting 1–7 day consumption horizons without data leakage."
         action={
           <button className="primary" onClick={runPrediction} disabled={loading}>
-            {loading ? 'Forecasting…' : '⚡ Run AI Forecast ↗'}
+            {loading ? 'Forecasting…' : 'Run AI Forecast'}
           </button>
         }
       />
@@ -233,7 +233,7 @@ export default function Predictions() {
             onClick={() => nav('/transfers')}
             style={{ marginTop: '16px' }}
           >
-            Find Safe Donor & Propose Transfer →
+            Find Safe Donor & Propose Transfer
           </button>
         </section>
       </div>

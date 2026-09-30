@@ -33,7 +33,7 @@ export default function Alerts() {
       const newSurgeAlert = {
         id: `alt-surge-${Date.now()}`,
         severity: 'CRITICAL',
-        title: '🚨 DENGUE OUTBREAK SURGE SIMULATION TRIGGERED',
+        title: 'DENGUE OUTBREAK SURGE SIMULATION TRIGGERED',
         text: `Footfall spiked +45% across East Delhi & Ghaziabad. Projected IV Fluids shortfall: 250 units at Muradnagar.`,
         time: 'Just now',
         phcId: 'phc-ghaziabad-rural'
@@ -44,7 +44,7 @@ export default function Alerts() {
       const fallbackAlert = {
         id: `alt-surge-${Date.now()}`,
         severity: 'CRITICAL',
-        title: '🚨 DENGUE OUTBREAK SURGE SIMULATION TRIGGERED',
+        title: 'DENGUE OUTBREAK SURGE SIMULATION TRIGGERED',
         text: `Footfall spiked +45%. Rapid IV Fluids & ORS consumption increase simulated.`,
         time: 'Just now',
         phcId: 'phc-ghaziabad-rural'
@@ -64,7 +64,7 @@ export default function Alerts() {
         desc="Prioritized early warning signals requiring administrative attention or stock redistribution."
         action={
           <button className="primary" onClick={handleSimulateSurge} disabled={simulating}>
-            {simulating ? 'Simulating…' : '⚡ Simulate Dengue Outbreak Surge'}
+            {simulating ? 'Simulating…' : 'Simulate Dengue Outbreak Surge'}
           </button>
         }
       />
@@ -80,7 +80,7 @@ export default function Alerts() {
           className={filter === 'CRITICAL' ? 'primary' : 'secondary'}
           onClick={() => setFilter('CRITICAL')}
         >
-          🚨 Critical ({alerts.filter(a => a.severity === 'CRITICAL').length})
+          Critical ({alerts.filter(a => a.severity === 'CRITICAL').length})
         </button>
         <button
           className={filter === 'RESOLVED' ? 'primary' : 'secondary'}
@@ -93,7 +93,7 @@ export default function Alerts() {
       <div className="alert-list" style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
         {visibleAlerts.length === 0 ? (
           <div className="card" style={{ textAlign: 'center', padding: '40px', color: '#777' }}>
-            <div style={{ fontSize: '32px', marginBottom: '8px' }}>✓</div>
+            <div style={{ fontSize: '16px', fontWeight: 'bold', marginBottom: '8px' }}>All Clear</div>
             <b>No alerts matching this filter.</b>
             <p style={{ fontSize: '11px', margin: '4px 0 0' }}>All primary health facilities are within normal operational limits.</p>
           </div>
@@ -109,11 +109,12 @@ export default function Alerts() {
                   display: 'grid',
                   placeItems: 'center',
                   fontWeight: '800',
+                  fontSize: '11px',
                   color: '#fff',
                   background: a.severity === 'CRITICAL' ? '#e53e3e' : a.severity === 'HIGH_RISK' ? '#dd6b20' : '#d69e2e'
                 }}
               >
-                {a.severity === 'CRITICAL' ? '!' : '•'}
+                {a.severity === 'CRITICAL' ? 'CRIT' : 'WARN'}
               </div>
 
               <div className="alert-main" style={{ flex: 1 }}>
@@ -133,7 +134,7 @@ export default function Alerts() {
                   onClick={() => handleResolve(a.id)}
                   style={{ whiteSpace: 'nowrap' }}
                 >
-                  ✓ Mark Resolved
+                  Mark Resolved
                 </button>
               )}
             </div>

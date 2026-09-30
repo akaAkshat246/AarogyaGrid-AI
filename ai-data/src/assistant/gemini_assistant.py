@@ -120,7 +120,7 @@ class GroundedOperationsAssistant:
             
             lines = ["Here are the current high-risk centres identified by AarogyaGrid AI:"]
             for a in context["criticalAlerts"][:5]:
-                lines.append(f"• **{a['phcName']}** ({a['severity']}): {a['message']}")
+                lines.append(f"- **{a['phcName']}** ({a['severity']}): {a['message']}")
             
             if context["surpluses"]:
                 lines.append("\n**Suggested Action:** Surplus stock is available at nearby centres. Review recommended transfer orders on the Redistribution dashboard.")
@@ -142,7 +142,7 @@ class GroundedOperationsAssistant:
                 return "Medicine stock levels across all monitored PHCs are adequate for the next 7 days."
             lines = ["**Critical Medicine Shortages Identified:**"]
             for d in context["deficits"]:
-                lines.append(f"• **{d['phcName']}**: {d['medicine']} has only ~{d['daysRemaining']:.1f} days of stock remaining ({d['currentStock']} units on hand). Shortfall: {d['neededUnits']} units.")
+                lines.append(f"- **{d['phcName']}**: {d['medicine']} has only ~{d['daysRemaining']:.1f} days of stock remaining ({d['currentStock']} units on hand). Shortfall: {d['neededUnits']} units.")
             return "\n".join(lines)
 
         # Generic summary

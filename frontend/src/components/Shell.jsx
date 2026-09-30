@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { endpoints } from '../services/api';
 
-const links = [
-  ['/dashboard', '⌂', 'Dashboard'],
-  ['/phcs', '⌖', 'PHC Centers'],
-  ['/inventory', '▣', 'Inventory'],
-  ['/predictions', '◒', 'AI Predictions'],
-  ['/transfers', '⇄', 'Redistribution'],
-  ['/alerts', '!', 'Alerts'],
-  ['/map', '◉', 'District Map'],
-  ['/copilot', '✦', 'Gemini Copilot']
+const navItems = [
+  { to: '/dashboard', label: 'Dashboard' },
+  { to: '/phcs', label: 'PHC Centers' },
+  { to: '/inventory', label: 'Inventory' },
+  { to: '/predictions', label: 'AI Predictions' },
+  { to: '/transfers', label: 'Redistribution' },
+  { to: '/alerts', label: 'Alerts' },
+  { to: '/map', label: 'District Map' },
+  { to: '/copilot', label: 'Gemini Copilot' }
 ];
 
 export default function Shell({ children }) {
@@ -21,13 +20,12 @@ export default function Shell({ children }) {
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [alertsOpen, setAlertsOpen] = useState(false);
-  const [recentAlerts, setRecentAlerts] = useState([
+  const [recentAlerts] = useState([
     { id: 'alt-1', title: 'Critical Insulin Shortage', phc: 'PHC Sector 22 Noida', time: '5m ago', severity: 'CRITICAL' },
     { id: 'alt-2', title: 'Outbreak Bed Overload', phc: 'PHC Muradnagar Rural', time: '18m ago', severity: 'CRITICAL' },
     { id: 'alt-3', title: 'High Dengue Admission Footfall', phc: 'PHC Laxmi Nagar', time: '42m ago', severity: 'HIGH_RISK' }
   ]);
 
-  // Keyboard shortcut '/' for Quick Search
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === '/' && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) {
@@ -48,15 +46,15 @@ export default function Shell({ children }) {
     { type: 'Page', title: 'Medicine Stock Inventory', path: '/inventory' },
     { type: 'Page', title: 'AI Demand Predictions & Ridge ML', path: '/predictions' },
     { type: 'Page', title: 'Smart Redistribution & Transfers', path: '/transfers' },
-    { type: 'Page', title: 'Interactive District Map (Google Maps)', path: '/map' },
+    { type: 'Page', title: 'Interactive District Map', path: '/map' },
     { type: 'Page', title: 'Gemini Operations Copilot', path: '/copilot' },
-    { type: 'PHC', title: 'PHC Sector 22 Noida (Gautam Buddha Nagar)', path: '/phcs' },
-    { type: 'PHC', title: 'PHC Sector 62 Noida (Surplus Hub)', path: '/phcs' },
-    { type: 'PHC', title: 'PHC Laxmi Nagar (East Delhi)', path: '/phcs' },
-    { type: 'PHC', title: 'PHC Muradnagar Rural (Ghaziabad)', path: '/phcs' },
-    { type: 'Medicine', title: 'Insulin Glargine 100IU (Critical Stock)', path: '/inventory' },
-    { type: 'Medicine', title: 'ORS Rehydration Salts (High Demand)', path: '/inventory' },
-    { type: 'Medicine', title: 'IV Normal Saline 500ml (Surplus Available)', path: '/inventory' }
+    { type: 'Facility', title: 'PHC Sector 22 Noida', path: '/phcs' },
+    { type: 'Facility', title: 'PHC Sector 62 Noida', path: '/phcs' },
+    { type: 'Facility', title: 'PHC Laxmi Nagar', path: '/phcs' },
+    { type: 'Facility', title: 'PHC Muradnagar Rural', path: '/phcs' },
+    { type: 'Resource', title: 'Insulin Glargine 100IU', path: '/inventory' },
+    { type: 'Resource', title: 'ORS Rehydration Salts', path: '/inventory' },
+    { type: 'Resource', title: 'IV Normal Saline 500ml', path: '/inventory' }
   ];
 
   const filteredSearch = searchItems.filter(item =>
@@ -65,7 +63,6 @@ export default function Shell({ children }) {
 
   return (
     <div className="app-shell">
-      {/* Mobile Drawer Backdrop */}
       {mobileOpen && (
         <div
           className="mobile-backdrop"
@@ -91,22 +88,22 @@ export default function Shell({ children }) {
           {mobileOpen && (
             <button
               onClick={() => setMobileOpen(false)}
-              style={{ marginLeft: 'auto', background: 'none', border: 'none', fontSize: '20px', cursor: 'pointer' }}
+              style={{ marginLeft: 'auto', background: 'none', border: 'none', fontSize: '16px', cursor: 'pointer' }}
             >
-              ✕
+              Close
             </button>
           )}
         </div>
 
         <nav>
-          {links.map(([to, icon, label]) => (
+          {navItems.map(({ to, label }) => (
             <NavLink
               key={to}
               to={to}
               onClick={() => setMobileOpen(false)}
               className={({ isActive }) => (isActive ? 'active' : '')}
             >
-              <span>{icon}</span>
+              <span className="nav-dot" />
               {label}
             </NavLink>
           ))}
@@ -133,13 +130,13 @@ export default function Shell({ children }) {
                 style={{ width: '34px', height: '34px', borderRadius: '50%', objectFit: 'cover' }}
               />
             ) : (
-              <span>{(user?.name || 'D')[0]}</span>
+              <span>{(user?.name || 'A')[0]}</span>
             )}
             <div>
               <b>{user?.name || 'Administrator'}</b>
-              <small>{user?.mode === 'google' ? 'Google Authenticated' : user?.mode === 'demo' ? 'Demo Admin' : 'Health Officer'}</small>
+              <small>{user?.mode === 'google' ? 'Google Authenticated' : user?.mode === 'demo' ? 'Demo Administrator' : 'Health Officer'}</small>
             </div>
-            <em>↪</em>
+            <em style={{ fontSize: '11px', color: '#999' }}>Exit</em>
           </button>
         </div>
       </aside>
@@ -153,7 +150,7 @@ export default function Shell({ children }) {
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle navigation menu"
             >
-              ☰
+              Menu
             </button>
             <div>
               <span className="eyebrow">NATIONAL HEALTH RESOURCE NETWORK</span>
@@ -170,10 +167,11 @@ export default function Shell({ children }) {
             <button
               className="icon-btn"
               onClick={() => setSearchOpen(true)}
-              title="Search PHCs, medicines, pages (Press '/')"
+              title="Search facilities, medicines, pages (Press '/')"
               aria-label="Search"
+              style={{ fontSize: '11px', fontWeight: 'bold' }}
             >
-              ⌕
+              Search
             </button>
 
             {/* Notifications Button */}
@@ -182,18 +180,17 @@ export default function Shell({ children }) {
               onClick={() => setAlertsOpen(!alertsOpen)}
               title="View live alerts"
               aria-label="Alerts"
-              style={{ position: 'relative' }}
+              style={{ position: 'relative', fontSize: '11px', fontWeight: 'bold' }}
             >
-              !
+              Alerts
               <span style={{
                 position: 'absolute',
-                top: '-4px',
-                right: '-4px',
-                width: '10px',
-                height: '10px',
+                top: '-3px',
+                right: '-3px',
+                width: '8px',
+                height: '8px',
                 borderRadius: '50%',
-                background: '#e53e3e',
-                border: '2px solid #fff'
+                background: '#e53e3e'
               }} />
             </button>
 
@@ -214,7 +211,7 @@ export default function Shell({ children }) {
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
                   <b style={{ fontSize: '13px' }}>Active System Alerts</b>
                   <NavLink to="/alerts" onClick={() => setAlertsOpen(false)} style={{ fontSize: '11px', color: 'var(--sage)', fontWeight: 'bold' }}>
-                    View all →
+                    View all
                   </NavLink>
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
@@ -231,7 +228,7 @@ export default function Shell({ children }) {
                       }}
                     >
                       <b style={{ fontSize: '11px', display: 'block', color: '#333' }}>{a.title}</b>
-                      <small style={{ fontSize: '9px', color: '#777' }}>{a.phc} · {a.time}</small>
+                      <small style={{ fontSize: '9px', color: '#777' }}>{a.phc} - {a.time}</small>
                     </div>
                   ))}
                 </div>
@@ -269,21 +266,21 @@ export default function Shell({ children }) {
               onClick={e => e.stopPropagation()}
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', borderBottom: '1px solid var(--line)', paddingBottom: '12px' }}>
-                <span style={{ fontSize: '18px', color: '#888' }}>⌕</span>
+                <span style={{ fontSize: '12px', fontWeight: 'bold', color: '#888' }}>FIND</span>
                 <input
                   autoFocus
-                  placeholder="Search facilities, medicines, pages, or routes..."
+                  placeholder="Search facilities, medicines, pages, or corridors..."
                   value={searchQuery}
                   onChange={e => setSearchQuery(e.target.value)}
                   style={{
                     flex: 1,
                     border: 'none',
                     outline: 'none',
-                    fontSize: '15px',
+                    fontSize: '14px',
                     background: 'transparent'
                   }}
                 />
-                <span style={{ fontSize: '11px', color: '#999', background: '#eee', padding: '2px 6px', borderRadius: '4px' }}>ESC</span>
+                <span style={{ fontSize: '10px', color: '#999', background: '#eee', padding: '2px 6px', borderRadius: '4px' }}>ESC</span>
               </div>
 
               <div style={{ marginTop: '12px', maxHeight: '380px', overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: '4px' }}>
