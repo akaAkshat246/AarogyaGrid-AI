@@ -1,0 +1,32 @@
+services:
+  ai-engine:
+    build:
+      context: .
+      dockerfile: Dockerfile.ai
+    container_name: aarogyagrid-ai-engine
+    ports:
+      - "8000:8000"
+    environment:
+      - APP_ENV=development
+      - STORAGE_BACKEND=mock
+      - PORT=8000
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    container_name: aarogyagrid-backend
+    ports:
+      - "5000:5000"
+    environment:
+      - NODE_ENV=development
+      - PORT=5000
+      - HOST=0.0.0.0
+      - DEV_SKIP_AUTH=true
+      - AI_URL=http://ai-engine:8000
+      - AI_PREDICT_PATH=/predict
+      - CORS_ORIGINS=http://localhost:5173,http://localhost:3000
+    depends_on:
+      - ai-engine
+    restart: unless-stopped

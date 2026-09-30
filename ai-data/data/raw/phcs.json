@@ -1,0 +1,178 @@
+[
+  {
+    "id": "phc-delhi-east-01",
+    "name": "PHC Laxmi Nagar",
+    "district": "Delhi East",
+    "state": "Delhi",
+    "latitude": 28.6315,
+    "longitude": 77.2773,
+    "totalBeds": 24,
+    "doctorsTotal": 8,
+    "nursesTotal": 16
+  },
+  {
+    "id": "phc-delhi-east-02",
+    "name": "PHC Mayur Vihar",
+    "district": "Delhi East",
+    "state": "Delhi",
+    "latitude": 28.6083,
+    "longitude": 77.2952,
+    "totalBeds": 30,
+    "doctorsTotal": 10,
+    "nursesTotal": 20
+  },
+  {
+    "id": "phc-delhi-south-01",
+    "name": "PHC Saket",
+    "district": "Delhi South",
+    "state": "Delhi",
+    "latitude": 28.5244,
+    "longitude": 77.2167,
+    "totalBeds": 36,
+    "doctorsTotal": 12,
+    "nursesTotal": 24
+  },
+  {
+    "id": "phc-delhi-south-02",
+    "name": "PHC Hauz Khas",
+    "district": "Delhi South",
+    "state": "Delhi",
+    "latitude": 28.5494,
+    "longitude": 77.2001,
+    "totalBeds": 20,
+    "doctorsTotal": 6,
+    "nursesTotal": 12
+  },
+  {
+    "id": "phc-delhi-north-01",
+    "name": "PHC Rohini Sec-15",
+    "district": "Delhi North",
+    "state": "Delhi",
+    "latitude": 28.718,
+    "longitude": 77.1264,
+    "totalBeds": 28,
+    "doctorsTotal": 8,
+    "nursesTotal": 18
+  },
+  {
+    "id": "phc-delhi-central-01",
+    "name": "PHC Karol Bagh",
+    "district": "Delhi Central",
+    "state": "Delhi",
+    "latitude": 28.6514,
+    "longitude": 77.1907,
+    "totalBeds": 22,
+    "doctorsTotal": 7,
+    "nursesTotal": 14
+  },
+  {
+    "id": "phc-noida-sec22",
+    "name": "PHC Sector 22 Noida",
+    "district": "Gautam Buddha Nagar",
+    "state": "Uttar Pradesh",
+    "latitude": 28.596,
+    "longitude": 77.348,
+    "totalBeds": 18,
+    "doctorsTotal": 6,
+    "nursesTotal": 12
+  },
+  {
+    "id": "phc-noida-sec62",
+    "name": "PHC Sector 62 Noida",
+    "district": "Gautam Buddha Nagar",
+    "state": "Uttar Pradesh",
+    "latitude": 28.627,
+    "longitude": 77.362,
+    "totalBeds": 32,
+    "doctorsTotal": 10,
+    "nursesTotal": 20
+  },
+  {
+    "id": "phc-gr-noida-beta",
+    "name": "CHC Beta 1 Greater Noida",
+    "district": "Gautam Buddha Nagar",
+    "state": "Uttar Pradesh",
+    "latitude": 28.472,
+    "longitude": 77.508,
+    "totalBeds": 40,
+    "doctorsTotal": 12,
+    "nursesTotal": 22
+  },
+  {
+    "id": "phc-ghaziabad-indirapuram",
+    "name": "PHC Indirapuram",
+    "district": "Ghaziabad",
+    "state": "Uttar Pradesh",
+    "latitude": 28.6434,
+    "longitude": 77.3713,
+    "totalBeds": 20,
+    "doctorsTotal": 6,
+    "nursesTotal": 14
+  },
+  {
+    "id": "phc-ghaziabad-rajnagar",
+    "name": "CHC Raj Nagar",
+    "district": "Ghaziabad",
+    "state": "Uttar Pradesh",
+    "latitude": 28.683,
+    "longitude": 77.442,
+    "totalBeds": 35,
+    "doctorsTotal": 11,
+    "nursesTotal": 20
+  },
+  {
+    "id": "phc-ghaziabad-rural",
+    "name": "PHC Muradnagar Rural",
+    "district": "Ghaziabad",
+    "state": "Uttar Pradesh",
+    "latitude": 28.775,
+    "longitude": 77.502,
+    "totalBeds": 15,
+    "doctorsTotal": 4,
+    "nursesTotal": 8
+  },
+  {
+    "id": "phc-meerut-cantt",
+    "name": "CHC Meerut Cantt",
+    "district": "Meerut",
+    "state": "Uttar Pradesh",
+    "latitude": 28.9845,
+    "longitude": 77.7064,
+    "totalBeds": 45,
+    "doctorsTotal": 14,
+    "nursesTotal": 26
+  },
+  {
+    "id": "phc-meerut-rural",
+    "name": "PHC Partapur",
+    "district": "Meerut",
+    "state": "Uttar Pradesh",
+    "latitude": 28.921,
+    "longitude": 77.632,
+    "totalBeds": 16,
+    "doctorsTotal": 5,
+    "nursesTotal": 10
+  },
+  {
+    "id": "phc-gurgaon-sec14",
+    "name": "PHC Sector 14 Gurugram",
+    "district": "Gurugram",
+    "state": "Haryana",
+    "latitude": 28.4732,
+    "longitude": 77.0425,
+    "totalBeds": 28,
+    "doctorsTotal": 9,
+    "nursesTotal": 18
+  },
+  {
+    "id": "phc-faridabad-sec16",
+    "name": "CHC Sector 16 Faridabad",
+    "district": "Faridabad",
+    "state": "Haryana",
+    "latitude": 28.411,
+    "longitude": 77.318,
+    "totalBeds": 34,
+    "doctorsTotal": 10,
+    "nursesTotal": 20
+  }
+]

@@ -1,0 +1,70 @@
+{
+  "modelName": "aarogyagrid-demand-forecaster",
+  "modelVersion": "v1.0.0",
+  "framework": "scikit-learn",
+  "frameworkVersion": "1.9.1",
+  "createdAt": "2026-09-30T00:19:35.664340+00:00",
+  "inputFeatures": [
+    {
+      "name": "lag_1",
+      "type": "FLOAT64",
+      "description": "Previous day medicine usage"
+    },
+    {
+      "name": "lag_2",
+      "type": "FLOAT64",
+      "description": "2 days prior medicine usage"
+    },
+    {
+      "name": "lag_7",
+      "type": "FLOAT64",
+      "description": "7 days prior medicine usage"
+    },
+    {
+      "name": "rolling_mean_7",
+      "type": "FLOAT64",
+      "description": "7-day moving average usage"
+    },
+    {
+      "name": "rolling_std_7",
+      "type": "FLOAT64",
+      "description": "7-day standard deviation"
+    },
+    {
+      "name": "patients",
+      "type": "INT64",
+      "description": "Daily patient footfall"
+    },
+    {
+      "name": "outbreakFlag",
+      "type": "INT64",
+      "description": "Binary outbreak indicator"
+    },
+    {
+      "name": "dow_sin",
+      "type": "FLOAT64",
+      "description": "Sine encoded day of week"
+    },
+    {
+      "name": "dow_cos",
+      "type": "FLOAT64",
+      "description": "Cosine encoded day of week"
+    }
+  ],
+  "outputPrediction": {
+    "name": "predicted_demand",
+    "type": "FLOAT64",
+    "description": "Expected daily medicine demand"
+  },
+  "evaluationMetrics": {
+    "mae": 305.55,
+    "rmse": 343.26,
+    "train_samples": 39,
+    "val_samples": 14
+  },
+  "vertexServingConfig": {
+    "containerImageUri": "us-docker.pkg.dev/vertex-ai/prediction/sklearn-cpu.1-3:latest",
+    "predictRoute": "/predict",
+    "healthRoute": "/health"
+  }
+}

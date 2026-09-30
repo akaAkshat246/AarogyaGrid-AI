@@ -1,0 +1,131 @@
+{
+  "info": {
+    "name": "AarogyaGrid AI API Collection",
+    "description": "Comprehensive Postman API Collection for AarogyaGrid AI Platform (Node.js Backend & Python AI Engine)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Checks",
+      "item": [
+        {
+          "name": "Node.js Backend Health",
+          "request": {
+            "method": "GET",
+            "url": "http://127.0.0.1:5000/health"
+          }
+        },
+        {
+          "name": "Python AI Engine Health",
+          "request": {
+            "method": "GET",
+            "url": "http://127.0.0.1:8000/health"
+          }
+        }
+      ]
+    },
+    {
+      "name": "AI & ML Forecasting",
+      "item": [
+        {
+          "name": "Predict Medicine Demand & Stockout",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"phcId\": \"phc-noida-sec22\",\n  \"medicine\": \"Insulin Glargine 100IU\",\n  \"currentStock\": 38,\n  \"dailyUsage\": 25.0,\n  \"patientFootfall\": 140\n}"
+            },
+            "url": "http://127.0.0.1:8000/predict"
+          }
+        },
+        {
+          "name": "Get PHC Operational Risk Assessment",
+          "request": {
+            "method": "GET",
+            "url": "http://127.0.0.1:8000/risk/assess/phc-noida-sec22"
+          }
+        },
+        {
+          "name": "Get District Risk Overview",
+          "request": {
+            "method": "GET",
+            "url": "http://127.0.0.1:8000/risk/district/Gautam%20Buddha%20Nagar"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Smart Redistribution",
+      "item": [
+        {
+          "name": "Find Safe Donor Centres & Transfer Recommendations",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"deficitPhcId\": \"phc-noida-sec22\",\n  \"medicine\": \"Insulin Glargine 100IU\"\n}"
+            },
+            "url": "http://127.0.0.1:8000/redistribute/recommend"
+          }
+        },
+        {
+          "name": "List Transfers (Backend)",
+          "request": {
+            "method": "GET",
+            "url": "http://127.0.0.1:5000/api/transfers"
+          }
+        },
+        {
+          "name": "Approve Transfer Status (Backend)",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"APPROVED\"\n}"
+            },
+            "url": "http://127.0.0.1:5000/api/transfers/tr-001/status"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Gemini Assistant & Emergency Simulation",
+      "item": [
+        {
+          "name": "Ask Grounded Operations Assistant",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"Which centres have the highest shortage risk in the next 24 hours?\"\n}"
+            },
+            "url": "http://127.0.0.1:8000/assistant/query"
+          }
+        },
+        {
+          "name": "Trigger Dengue Outbreak Surge Scenario",
+          "request": {
+            "method": "POST",
+            "url": "http://127.0.0.1:8000/emergency/dengue-surge"
+          }
+        },
+        {
+          "name": "Run Federated Learning Round",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"roundNumber\": 1\n}"
+            },
+            "url": "http://127.0.0.1:8000/federated/train-round"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,866 @@
+[
+  {
+    "id": "phc-delhi-east-01-paracetamol-500",
+    "phcId": "phc-delhi-east-01",
+    "medicine": "Paracetamol 500mg",
+    "unit": "Tablets",
+    "quantity": 1622,
+    "minimumStock": 2027,
+    "dailyUsage": 506.8
+  },
+  {
+    "id": "phc-delhi-east-01-insulin-glargin",
+    "phcId": "phc-delhi-east-01",
+    "medicine": "Insulin Glargine 100IU",
+    "unit": "Vials",
+    "quantity": 406,
+    "minimumStock": 137,
+    "dailyUsage": 34.3
+  },
+  {
+    "id": "phc-delhi-east-01-ors-rehydration",
+    "phcId": "phc-delhi-east-01",
+    "medicine": "ORS Rehydration Salts",
+    "unit": "Packets",
+    "quantity": 1586,
+    "minimumStock": 1982,
+    "dailyUsage": 495.5
+  },
+  {
+    "id": "phc-delhi-east-01-amoxicillin-500",
+    "phcId": "phc-delhi-east-01",
+    "medicine": "Amoxicillin 500mg",
+    "unit": "Capsules",
+    "quantity": 1298,
+    "minimumStock": 637,
+    "dailyUsage": 159.3
+  },
+  {
+    "id": "phc-delhi-east-01-iv-normal-salin",
+    "phcId": "phc-delhi-east-01",
+    "medicine": "IV Normal Saline 500ml",
+    "unit": "Bottles",
+    "quantity": 1276,
+    "minimumStock": 529,
+    "dailyUsage": 132.2
+  },
+  {
+    "id": "phc-delhi-east-01-oxygen-cylinder",
+    "phcId": "phc-delhi-east-01",
+    "medicine": "Oxygen Cylinders 40L",
+    "unit": "Cylinders",
+    "quantity": 142,
+    "minimumStock": 61,
+    "dailyUsage": 15.2
+  },
+  {
+    "id": "phc-delhi-east-02-paracetamol-500",
+    "phcId": "phc-delhi-east-02",
+    "medicine": "Paracetamol 500mg",
+    "unit": "Tablets",
+    "quantity": 2794,
+    "minimumStock": 900,
+    "dailyUsage": 225.0
+  },
+  {
+    "id": "phc-delhi-east-02-insulin-glargin",
+    "phcId": "phc-delhi-east-02",
+    "medicine": "Insulin Glargine 100IU",
+    "unit": "Vials",
+    "quantity": 304,
+    "minimumStock": 101,
+    "dailyUsage": 25.2
+  },
+  {
+    "id": "phc-delhi-east-02-ors-rehydration",
+    "phcId": "phc-delhi-east-02",
+    "medicine": "ORS Rehydration Salts",
+    "unit": "Packets",
+    "quantity": 2345,
+    "minimumStock": 702,
+    "dailyUsage": 175.6
+  },
+  {
+    "id": "phc-delhi-east-02-amoxicillin-500",
+    "phcId": "phc-delhi-east-02",
+    "medicine": "Amoxicillin 500mg",
+    "unit": "Capsules",
+    "quantity": 759,
+    "minimumStock": 356,
+    "dailyUsage": 89.1
+  },
+  {
+    "id": "phc-delhi-east-02-iv-normal-salin",
+    "phcId": "phc-delhi-east-02",
+    "medicine": "IV Normal Saline 500ml",
+    "unit": "Bottles",
+    "quantity": 433,
+    "minimumStock": 164,
+    "dailyUsage": 41.1
+  },
+  {
+    "id": "phc-delhi-east-02-oxygen-cylinder",
+    "phcId": "phc-delhi-east-02",
+    "medicine": "Oxygen Cylinders 40L",
+    "unit": "Cylinders",
+    "quantity": 52,
+    "minimumStock": 25,
+    "dailyUsage": 6.3
+  },
+  {
+    "id": "phc-delhi-south-01-paracetamol-500",
+    "phcId": "phc-delhi-south-01",
+    "medicine": "Paracetamol 500mg",
+    "unit": "Tablets",
+    "quantity": 2496,
+    "minimumStock": 1072,
+    "dailyUsage": 268.0
+  },
+  {
+    "id": "phc-delhi-south-01-insulin-glargin",
+    "phcId": "phc-delhi-south-01",
+    "medicine": "Insulin Glargine 100IU",
+    "unit": "Vials",
+    "quantity": 348,
+    "minimumStock": 126,
+    "dailyUsage": 31.5
+  },
+  {
+    "id": "phc-delhi-south-01-ors-rehydration",
+    "phcId": "phc-delhi-south-01",
+    "medicine": "ORS Rehydration Salts",
+    "unit": "Packets",
+    "quantity": 1460,
+    "minimumStock": 716,
+    "dailyUsage": 179.0
+  },
+  {
+    "id": "phc-delhi-south-01-amoxicillin-500",
+    "phcId": "phc-delhi-south-01",
+    "medicine": "Amoxicillin 500mg",
+    "unit": "Capsules",
+    "quantity": 952,
+    "minimumStock": 414,
+    "dailyUsage": 103.6
+  },
+  {
+    "id": "phc-delhi-south-01-iv-normal-salin",
+    "phcId": "phc-delhi-south-01",
+    "medicine": "IV Normal Saline 500ml",
+    "unit": "Bottles",
+    "quantity": 594,
+    "minimumStock": 200,
+    "dailyUsage": 49.9
+  },
+  {
+    "id": "phc-delhi-south-01-oxygen-cylinder",
+    "phcId": "phc-delhi-south-01",
+    "medicine": "Oxygen Cylinders 40L",
+    "unit": "Cylinders",
+    "quantity": 88,
+    "minimumStock": 31,
+    "dailyUsage": 7.8
+  },
+  {
+    "id": "phc-delhi-south-02-paracetamol-500",
+    "phcId": "phc-delhi-south-02",
+    "medicine": "Paracetamol 500mg",
+    "unit": "Tablets",
+    "quantity": 1332,
+    "minimumStock": 572,
+    "dailyUsage": 142.9
+  },
+  {
+    "id": "phc-delhi-south-02-insulin-glargin",
+    "phcId": "phc-delhi-south-02",
+    "medicine": "Insulin Glargine 100IU",
+    "unit": "Vials",
+    "quantity": 211,
+    "minimumStock": 73,
+    "dailyUsage": 18.3
+  },
+  {
+    "id": "phc-delhi-south-02-ors-rehydration",
+    "phcId": "phc-delhi-south-02",
+    "medicine": "ORS Rehydration Salts",
+    "unit": "Packets",
+    "quantity": 1337,
+    "minimumStock": 416,
+    "dailyUsage": 104.0
+  },
+  {
+    "id": "phc-delhi-south-02-amoxicillin-500",
+    "phcId": "phc-delhi-south-02",
+    "medicine": "Amoxicillin 500mg",
+    "unit": "Capsules",
+    "quantity": 493,
+    "minimumStock": 245,
+    "dailyUsage": 61.3
+  },
+  {
+    "id": "phc-delhi-south-02-iv-normal-salin",
+    "phcId": "phc-delhi-south-02",
+    "medicine": "IV Normal Saline 500ml",
+    "unit": "Bottles",
+    "quantity": 348,
+    "minimumStock": 108,
+    "dailyUsage": 27.1
+  },
+  {
+    "id": "phc-delhi-south-02-oxygen-cylinder",
+    "phcId": "phc-delhi-south-02",
+    "medicine": "Oxygen Cylinders 40L",
+    "unit": "Cylinders",
+    "quantity": 55,
+    "minimumStock": 18,
+    "dailyUsage": 4.5
+  },
+  {
+    "id": "phc-delhi-north-01-paracetamol-500",
+    "phcId": "phc-delhi-north-01",
+    "medicine": "Paracetamol 500mg",
+    "unit": "Tablets",
+    "quantity": 2147,
+    "minimumStock": 855,
+    "dailyUsage": 213.8
+  },
+  {
+    "id": "phc-delhi-north-01-insulin-glargin",
+    "phcId": "phc-delhi-north-01",
+    "medicine": "Insulin Glargine 100IU",
+    "unit": "Vials",
+    "quantity": 205,
+    "minimumStock": 92,
+    "dailyUsage": 23.0
+  },
+  {
+    "id": "phc-delhi-north-01-ors-rehydration",
+    "phcId": "phc-delhi-north-01",
+    "medicine": "ORS Rehydration Salts",
+    "unit": "Packets",
+    "quantity": 2048,
+    "minimumStock": 596,
+    "dailyUsage": 149.0
+  },
+  {
+    "id": "phc-delhi-north-01-amoxicillin-500",
+    "phcId": "phc-delhi-north-01",
+    "medicine": "Amoxicillin 500mg",
+    "unit": "Capsules",
+    "quantity": 813,
+    "minimumStock": 324,
+    "dailyUsage": 81.1
+  },
+  {
+    "id": "phc-delhi-north-01-iv-normal-salin",
+    "phcId": "phc-delhi-north-01",
+    "medicine": "IV Normal Saline 500ml",
+    "unit": "Bottles",
+    "quantity": 307,
+    "minimumStock": 144,
+    "dailyUsage": 35.9
+  },
+  {
+    "id": "phc-delhi-north-01-oxygen-cylinder",
+    "phcId": "phc-delhi-north-01",
+    "medicine": "Oxygen Cylinders 40L",
+    "unit": "Cylinders",
+    "quantity": 51,
+    "minimumStock": 24,
+    "dailyUsage": 6.0
+  },
+  {
+    "id": "phc-delhi-central-01-paracetamol-500",
+    "phcId": "phc-delhi-central-01",
+    "medicine": "Paracetamol 500mg",
+    "unit": "Tablets",
+    "quantity": 2316,
+    "minimumStock": 708,
+    "dailyUsage": 177.0
+  },
+  {
+    "id": "phc-delhi-central-01-insulin-glargin",
+    "phcId": "phc-delhi-central-01",
+    "medicine": "Insulin Glargine 100IU",
+    "unit": "Vials",
+    "quantity": 219,
+    "minimumStock": 75,
+    "dailyUsage": 18.8
+  },
+  {
+    "id": "phc-delhi-central-01-ors-rehydration",
+    "phcId": "phc-delhi-central-01",
+    "medicine": "ORS Rehydration Salts",
+    "unit": "Packets",
+    "quantity": 1542,
+    "minimumStock": 480,
+    "dailyUsage": 120.1
+  },
+  {
+    "id": "phc-delhi-central-01-amoxicillin-500",
+    "phcId": "phc-delhi-central-01",
+    "medicine": "Amoxicillin 500mg",
+    "unit": "Capsules",
+    "quantity": 814,
+    "minimumStock": 263,
+    "dailyUsage": 65.8
+  },
+  {
+    "id": "phc-delhi-central-01-iv-normal-salin",
+    "phcId": "phc-delhi-central-01",
+    "medicine": "IV Normal Saline 500ml",
+    "unit": "Bottles",
+    "quantity": 367,
+    "minimumStock": 131,
+    "dailyUsage": 32.7
+  },
+  {
+    "id": "phc-delhi-central-01-oxygen-cylinder",
+    "phcId": "phc-delhi-central-01",
+    "medicine": "Oxygen Cylinders 40L",
+    "unit": "Cylinders",
+    "quantity": 68,
+    "minimumStock": 20,
+    "dailyUsage": 4.9
+  },
+  {
+    "id": "phc-noida-sec22-paracetamol-500",
+    "phcId": "phc-noida-sec22",
+    "medicine": "Paracetamol 500mg",
+    "unit": "Tablets",
+    "quantity": 1885,
+    "minimumStock": 734,
+    "dailyUsage": 183.5
+  },
+  {
+    "id": "phc-noida-sec22-insulin-glargin",
+    "phcId": "phc-noida-sec22",
+    "medicine": "Insulin Glargine 100IU",
+    "unit": "Vials",
+    "quantity": 31,
+    "minimumStock": 82,
+    "dailyUsage": 20.4
+  },
+  {
+    "id": "phc-noida-sec22-ors-rehydration",
+    "phcId": "phc-noida-sec22",
+    "medicine": "ORS Rehydration Salts",
+    "unit": "Packets",
+    "quantity": 1302,
+    "minimumStock": 460,
+    "dailyUsage": 115.1
+  },
+  {
+    "id": "phc-noida-sec22-amoxicillin-500",
+    "phcId": "phc-noida-sec22",
+    "medicine": "Amoxicillin 500mg",
+    "unit": "Capsules",
+    "quantity": 898,
+    "minimumStock": 277,
+    "dailyUsage": 69.2
+  },
+  {
+    "id": "phc-noida-sec22-iv-normal-salin",
+    "phcId": "phc-noida-sec22",
+    "medicine": "IV Normal Saline 500ml",
+    "unit": "Bottles",
+    "quantity": 397,
+    "minimumStock": 136,
+    "dailyUsage": 33.9
+  },
+  {
+    "id": "phc-noida-sec22-oxygen-cylinder",
+    "phcId": "phc-noida-sec22",
+    "medicine": "Oxygen Cylinders 40L",
+    "unit": "Cylinders",
+    "quantity": 68,
+    "minimumStock": 21,
+    "dailyUsage": 5.2
+  },
+  {
+    "id": "phc-noida-sec62-paracetamol-500",
+    "phcId": "phc-noida-sec62",
+    "medicine": "Paracetamol 500mg",
+    "unit": "Tablets",
+    "quantity": 2543,
+    "minimumStock": 887,
+    "dailyUsage": 221.8
+  },
+  {
+    "id": "phc-noida-sec62-insulin-glargin",
+    "phcId": "phc-noida-sec62",
+    "medicine": "Insulin Glargine 100IU",
+    "unit": "Vials",
+    "quantity": 554,
+    "minimumStock": 111,
+    "dailyUsage": 27.7
+  },
+  {
+    "id": "phc-noida-sec62-ors-rehydration",
+    "phcId": "phc-noida-sec62",
+    "medicine": "ORS Rehydration Salts",
+    "unit": "Packets",
+    "quantity": 1971,
+    "minimumStock": 645,
+    "dailyUsage": 161.2
+  },
+  {
+    "id": "phc-noida-sec62-amoxicillin-500",
+    "phcId": "phc-noida-sec62",
+    "medicine": "Amoxicillin 500mg",
+    "unit": "Capsules",
+    "quantity": 741,
+    "minimumStock": 358,
+    "dailyUsage": 89.5
+  },
+  {
+    "id": "phc-noida-sec62-iv-normal-salin",
+    "phcId": "phc-noida-sec62",
+    "medicine": "IV Normal Saline 500ml",
+    "unit": "Bottles",
+    "quantity": 380,
+    "minimumStock": 162,
+    "dailyUsage": 40.6
+  },
+  {
+    "id": "phc-noida-sec62-oxygen-cylinder",
+    "phcId": "phc-noida-sec62",
+    "medicine": "Oxygen Cylinders 40L",
+    "unit": "Cylinders",
+    "quantity": 62,
+    "minimumStock": 26,
+    "dailyUsage": 6.4
+  },
+  {
+    "id": "phc-gr-noida-beta-paracetamol-500",
+    "phcId": "phc-gr-noida-beta",
+    "medicine": "Paracetamol 500mg",
+    "unit": "Tablets",
+    "quantity": 2181,
+    "minimumStock": 1029,
+    "dailyUsage": 257.2
+  },
+  {
+    "id": "phc-gr-noida-beta-insulin-glargin",
+    "phcId": "phc-gr-noida-beta",
+    "medicine": "Insulin Glargine 100IU",
+    "unit": "Vials",
+    "quantity": 273,
+    "minimumStock": 116,
+    "dailyUsage": 29.0
+  },
+  {
+    "id": "phc-gr-noida-beta-ors-rehydration",
+    "phcId": "phc-gr-noida-beta",
+    "medicine": "ORS Rehydration Salts",
+    "unit": "Packets",
+    "quantity": 1578,
+    "minimumStock": 734,
+    "dailyUsage": 183.4
+  },
+  {
+    "id": "phc-gr-noida-beta-amoxicillin-500",
+    "phcId": "phc-gr-noida-beta",
+    "medicine": "Amoxicillin 500mg",
+    "unit": "Capsules",
+    "quantity": 928,
+    "minimumStock": 384,
+    "dailyUsage": 96.0
+  },
+  {
+    "id": "phc-gr-noida-beta-iv-normal-salin",
+    "phcId": "phc-gr-noida-beta",
+    "medicine": "IV Normal Saline 500ml",
+    "unit": "Bottles",
+    "quantity": 527,
+    "minimumStock": 178,
+    "dailyUsage": 44.6
+  },
+  {
+    "id": "phc-gr-noida-beta-oxygen-cylinder",
+    "phcId": "phc-gr-noida-beta",
+    "medicine": "Oxygen Cylinders 40L",
+    "unit": "Cylinders",
+    "quantity": 76,
+    "minimumStock": 30,
+    "dailyUsage": 7.5
+  },
+  {
+    "id": "phc-ghaziabad-indirapuram-paracetamol-500",
+    "phcId": "phc-ghaziabad-indirapuram",
+    "medicine": "Paracetamol 500mg",
+    "unit": "Tablets",
+    "quantity": 1704,
+    "minimumStock": 2130,
+    "dailyUsage": 532.6
+  },
+  {
+    "id": "phc-ghaziabad-indirapuram-insulin-glargin",
+    "phcId": "phc-ghaziabad-indirapuram",
+    "medicine": "Insulin Glargine 100IU",
+    "unit": "Vials",
+    "quantity": 374,
+    "minimumStock": 146,
+    "dailyUsage": 36.6
+  },
+  {
+    "id": "phc-ghaziabad-indirapuram-ors-rehydration",
+    "phcId": "phc-ghaziabad-indirapuram",
+    "medicine": "ORS Rehydration Salts",
+    "unit": "Packets",
+    "quantity": 1681,
+    "minimumStock": 2102,
+    "dailyUsage": 525.4
+  },
+  {
+    "id": "phc-ghaziabad-indirapuram-amoxicillin-500",
+    "phcId": "phc-ghaziabad-indirapuram",
+    "medicine": "Amoxicillin 500mg",
+    "unit": "Capsules",
+    "quantity": 1553,
+    "minimumStock": 671,
+    "dailyUsage": 167.8
+  },
+  {
+    "id": "phc-ghaziabad-indirapuram-iv-normal-salin",
+    "phcId": "phc-ghaziabad-indirapuram",
+    "medicine": "IV Normal Saline 500ml",
+    "unit": "Bottles",
+    "quantity": 1204,
+    "minimumStock": 502,
+    "dailyUsage": 125.4
+  },
+  {
+    "id": "phc-ghaziabad-indirapuram-oxygen-cylinder",
+    "phcId": "phc-ghaziabad-indirapuram",
+    "medicine": "Oxygen Cylinders 40L",
+    "unit": "Cylinders",
+    "quantity": 204,
+    "minimumStock": 60,
+    "dailyUsage": 15.0
+  },
+  {
+    "id": "phc-ghaziabad-rajnagar-paracetamol-500",
+    "phcId": "phc-ghaziabad-rajnagar",
+    "medicine": "Paracetamol 500mg",
+    "unit": "Tablets",
+    "quantity": 2662,
+    "minimumStock": 896,
+    "dailyUsage": 223.9
+  },
+  {
+    "id": "phc-ghaziabad-rajnagar-insulin-glargin",
+    "phcId": "phc-ghaziabad-rajnagar",
+    "medicine": "Insulin Glargine 100IU",
+    "unit": "Vials",
+    "quantity": 305,
+    "minimumStock": 105,
+    "dailyUsage": 26.2
+  },
+  {
+    "id": "phc-ghaziabad-rajnagar-ors-rehydration",
+    "phcId": "phc-ghaziabad-rajnagar",
+    "medicine": "ORS Rehydration Salts",
+    "unit": "Packets",
+    "quantity": 4432,
+    "minimumStock": 886,
+    "dailyUsage": 177.3
+  },
+  {
+    "id": "phc-ghaziabad-rajnagar-amoxicillin-500",
+    "phcId": "phc-ghaziabad-rajnagar",
+    "medicine": "Amoxicillin 500mg",
+    "unit": "Capsules",
+    "quantity": 810,
+    "minimumStock": 359,
+    "dailyUsage": 89.7
+  },
+  {
+    "id": "phc-ghaziabad-rajnagar-iv-normal-salin",
+    "phcId": "phc-ghaziabad-rajnagar",
+    "medicine": "IV Normal Saline 500ml",
+    "unit": "Bottles",
+    "quantity": 1040,
+    "minimumStock": 208,
+    "dailyUsage": 41.6
+  },
+  {
+    "id": "phc-ghaziabad-rajnagar-oxygen-cylinder",
+    "phcId": "phc-ghaziabad-rajnagar",
+    "medicine": "Oxygen Cylinders 40L",
+    "unit": "Cylinders",
+    "quantity": 87,
+    "minimumStock": 28,
+    "dailyUsage": 7.0
+  },
+  {
+    "id": "phc-ghaziabad-rural-paracetamol-500",
+    "phcId": "phc-ghaziabad-rural",
+    "medicine": "Paracetamol 500mg",
+    "unit": "Tablets",
+    "quantity": 2548,
+    "minimumStock": 1135,
+    "dailyUsage": 283.7
+  },
+  {
+    "id": "phc-ghaziabad-rural-insulin-glargin",
+    "phcId": "phc-ghaziabad-rural",
+    "medicine": "Insulin Glargine 100IU",
+    "unit": "Vials",
+    "quantity": 212,
+    "minimumStock": 82,
+    "dailyUsage": 20.6
+  },
+  {
+    "id": "phc-ghaziabad-rural-ors-rehydration",
+    "phcId": "phc-ghaziabad-rural",
+    "medicine": "ORS Rehydration Salts",
+    "unit": "Packets",
+    "quantity": 521,
+    "minimumStock": 1447,
+    "dailyUsage": 289.4
+  },
+  {
+    "id": "phc-ghaziabad-rural-amoxicillin-500",
+    "phcId": "phc-ghaziabad-rural",
+    "medicine": "Amoxicillin 500mg",
+    "unit": "Capsules",
+    "quantity": 1231,
+    "minimumStock": 353,
+    "dailyUsage": 88.3
+  },
+  {
+    "id": "phc-ghaziabad-rural-iv-normal-salin",
+    "phcId": "phc-ghaziabad-rural",
+    "medicine": "IV Normal Saline 500ml",
+    "unit": "Bottles",
+    "quantity": 125,
+    "minimumStock": 346,
+    "dailyUsage": 69.3
+  },
+  {
+    "id": "phc-ghaziabad-rural-oxygen-cylinder",
+    "phcId": "phc-ghaziabad-rural",
+    "medicine": "Oxygen Cylinders 40L",
+    "unit": "Cylinders",
+    "quantity": 94,
+    "minimumStock": 32,
+    "dailyUsage": 7.9
+  },
+  {
+    "id": "phc-meerut-cantt-paracetamol-500",
+    "phcId": "phc-meerut-cantt",
+    "medicine": "Paracetamol 500mg",
+    "unit": "Tablets",
+    "quantity": 3268,
+    "minimumStock": 1152,
+    "dailyUsage": 288.1
+  },
+  {
+    "id": "phc-meerut-cantt-insulin-glargin",
+    "phcId": "phc-meerut-cantt",
+    "medicine": "Insulin Glargine 100IU",
+    "unit": "Vials",
+    "quantity": 401,
+    "minimumStock": 132,
+    "dailyUsage": 33.1
+  },
+  {
+    "id": "phc-meerut-cantt-ors-rehydration",
+    "phcId": "phc-meerut-cantt",
+    "medicine": "ORS Rehydration Salts",
+    "unit": "Packets",
+    "quantity": 2588,
+    "minimumStock": 793,
+    "dailyUsage": 198.2
+  },
+  {
+    "id": "phc-meerut-cantt-amoxicillin-500",
+    "phcId": "phc-meerut-cantt",
+    "medicine": "Amoxicillin 500mg",
+    "unit": "Capsules",
+    "quantity": 1372,
+    "minimumStock": 434,
+    "dailyUsage": 108.4
+  },
+  {
+    "id": "phc-meerut-cantt-iv-normal-salin",
+    "phcId": "phc-meerut-cantt",
+    "medicine": "IV Normal Saline 500ml",
+    "unit": "Bottles",
+    "quantity": 505,
+    "minimumStock": 216,
+    "dailyUsage": 53.9
+  },
+  {
+    "id": "phc-meerut-cantt-oxygen-cylinder",
+    "phcId": "phc-meerut-cantt",
+    "medicine": "Oxygen Cylinders 40L",
+    "unit": "Cylinders",
+    "quantity": 70,
+    "minimumStock": 34,
+    "dailyUsage": 8.6
+  },
+  {
+    "id": "phc-meerut-rural-paracetamol-500",
+    "phcId": "phc-meerut-rural",
+    "medicine": "Paracetamol 500mg",
+    "unit": "Tablets",
+    "quantity": 1135,
+    "minimumStock": 459,
+    "dailyUsage": 114.7
+  },
+  {
+    "id": "phc-meerut-rural-insulin-glargin",
+    "phcId": "phc-meerut-rural",
+    "medicine": "Insulin Glargine 100IU",
+    "unit": "Vials",
+    "quantity": 128,
+    "minimumStock": 53,
+    "dailyUsage": 13.3
+  },
+  {
+    "id": "phc-meerut-rural-ors-rehydration",
+    "phcId": "phc-meerut-rural",
+    "medicine": "ORS Rehydration Salts",
+    "unit": "Packets",
+    "quantity": 854,
+    "minimumStock": 369,
+    "dailyUsage": 92.2
+  },
+  {
+    "id": "phc-meerut-rural-amoxicillin-500",
+    "phcId": "phc-meerut-rural",
+    "medicine": "Amoxicillin 500mg",
+    "unit": "Capsules",
+    "quantity": 661,
+    "minimumStock": 194,
+    "dailyUsage": 48.4
+  },
+  {
+    "id": "phc-meerut-rural-iv-normal-salin",
+    "phcId": "phc-meerut-rural",
+    "medicine": "IV Normal Saline 500ml",
+    "unit": "Bottles",
+    "quantity": 321,
+    "minimumStock": 97,
+    "dailyUsage": 24.2
+  },
+  {
+    "id": "phc-meerut-rural-oxygen-cylinder",
+    "phcId": "phc-meerut-rural",
+    "medicine": "Oxygen Cylinders 40L",
+    "unit": "Cylinders",
+    "quantity": 36,
+    "minimumStock": 14,
+    "dailyUsage": 3.6
+  },
+  {
+    "id": "phc-gurgaon-sec14-paracetamol-500",
+    "phcId": "phc-gurgaon-sec14",
+    "medicine": "Paracetamol 500mg",
+    "unit": "Tablets",
+    "quantity": 2366,
+    "minimumStock": 793,
+    "dailyUsage": 198.3
+  },
+  {
+    "id": "phc-gurgaon-sec14-insulin-glargin",
+    "phcId": "phc-gurgaon-sec14",
+    "medicine": "Insulin Glargine 100IU",
+    "unit": "Vials",
+    "quantity": 245,
+    "minimumStock": 94,
+    "dailyUsage": 23.6
+  },
+  {
+    "id": "phc-gurgaon-sec14-ors-rehydration",
+    "phcId": "phc-gurgaon-sec14",
+    "medicine": "ORS Rehydration Salts",
+    "unit": "Packets",
+    "quantity": 2074,
+    "minimumStock": 615,
+    "dailyUsage": 153.8
+  },
+  {
+    "id": "phc-gurgaon-sec14-amoxicillin-500",
+    "phcId": "phc-gurgaon-sec14",
+    "medicine": "Amoxicillin 500mg",
+    "unit": "Capsules",
+    "quantity": 901,
+    "minimumStock": 335,
+    "dailyUsage": 83.8
+  },
+  {
+    "id": "phc-gurgaon-sec14-iv-normal-salin",
+    "phcId": "phc-gurgaon-sec14",
+    "medicine": "IV Normal Saline 500ml",
+    "unit": "Bottles",
+    "quantity": 366,
+    "minimumStock": 153,
+    "dailyUsage": 38.2
+  },
+  {
+    "id": "phc-gurgaon-sec14-oxygen-cylinder",
+    "phcId": "phc-gurgaon-sec14",
+    "medicine": "Oxygen Cylinders 40L",
+    "unit": "Cylinders",
+    "quantity": 59,
+    "minimumStock": 25,
+    "dailyUsage": 6.2
+  },
+  {
+    "id": "phc-faridabad-sec16-paracetamol-500",
+    "phcId": "phc-faridabad-sec16",
+    "medicine": "Paracetamol 500mg",
+    "unit": "Tablets",
+    "quantity": 2600,
+    "minimumStock": 915,
+    "dailyUsage": 228.7
+  },
+  {
+    "id": "phc-faridabad-sec16-insulin-glargin",
+    "phcId": "phc-faridabad-sec16",
+    "medicine": "Insulin Glargine 100IU",
+    "unit": "Vials",
+    "quantity": 271,
+    "minimumStock": 113,
+    "dailyUsage": 28.3
+  },
+  {
+    "id": "phc-faridabad-sec16-ors-rehydration",
+    "phcId": "phc-faridabad-sec16",
+    "medicine": "ORS Rehydration Salts",
+    "unit": "Packets",
+    "quantity": 1910,
+    "minimumStock": 664,
+    "dailyUsage": 166.0
+  },
+  {
+    "id": "phc-faridabad-sec16-amoxicillin-500",
+    "phcId": "phc-faridabad-sec16",
+    "medicine": "Amoxicillin 500mg",
+    "unit": "Capsules",
+    "quantity": 1261,
+    "minimumStock": 377,
+    "dailyUsage": 94.2
+  },
+  {
+    "id": "phc-faridabad-sec16-iv-normal-salin",
+    "phcId": "phc-faridabad-sec16",
+    "medicine": "IV Normal Saline 500ml",
+    "unit": "Bottles",
+    "quantity": 455,
+    "minimumStock": 175,
+    "dailyUsage": 43.8
+  },
+  {
+    "id": "phc-faridabad-sec16-oxygen-cylinder",
+    "phcId": "phc-faridabad-sec16",
+    "medicine": "Oxygen Cylinders 40L",
+    "unit": "Cylinders",
+    "quantity": 63,
+    "minimumStock": 27,
+    "dailyUsage": 6.8
+  }
+]
