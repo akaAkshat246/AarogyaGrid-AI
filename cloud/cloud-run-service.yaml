@@ -16,7 +16,7 @@ spec:
       containerConcurrency: 80
       timeoutSeconds: 300
       containers:
-      - image: gcr.io/PROJECT_ID/aarogyagrid-ai:latest
+      - image: gcr.io/aarogyagrid-ai/aarogyagrid-ai:latest
         ports:
         - name: http1
           containerPort: 8000
@@ -30,7 +30,7 @@ spec:
         - name: STORAGE_BACKEND
           value: "firestore"
         - name: GCP_PROJECT_ID
-          value: "PROJECT_ID"
+          value: "aarogyagrid-ai"
         - name: GEMINI_API_KEY
           valueFrom:
             secretKeyRef:

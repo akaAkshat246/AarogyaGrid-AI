@@ -23,7 +23,7 @@ logger = logging.getLogger("AarogyaGrid.BigQuery")
 class BigQueryAnalyticsPipeline:
     def __init__(self, dataset_id: str = "aarogyagrid_analytics"):
         self.dataset_id = dataset_id
-        self.project_id = os.getenv("GCP_PROJECT_ID", "aarogyagrid-dev")
+        self.project_id = os.getenv("GCP_PROJECT_ID", "aarogyagrid-ai")
         self.client = None
         self._init_client()
 

@@ -4,7 +4,7 @@
 # ==============================================================================
 set -euo pipefail
 
-PROJECT_ID="${1:-${GCP_PROJECT_ID:-aarogyagrid-dev}}"
+PROJECT_ID="${1:-${GCP_PROJECT_ID:-aarogyagrid-ai}}"
 REGION="${2:-asia-south1}"
 
 echo "========================================================"

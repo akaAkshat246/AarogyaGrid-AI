@@ -169,26 +169,34 @@ class GroundedOperationsAssistant:
                     f"LIVE SYSTEM CONTEXT:\n{json.dumps(context, indent=2)}\n\n"
                     f"USER QUESTION: {user_query}"
                 )
-                url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={self.api_key}"
+                url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent?key={self.api_key}"
                 resp = requests.post(
                     url,
                     json={"contents": [{"parts": [{"text": prompt}]}]},
-                    headers={"Content-Type": "application/json"},
+                    headers={
+                        "Content-Type": "application/json",
+                        "x-goog-api-key": self.api_key
+                    },
                     timeout=12
                 )
                 if resp.status_code == 200:
                     data = resp.json()
-                    answer = data["candidates"][0]["content"]["parts"][0]["text"]
-                    return {
-                        "query": user_query,
-                        "answer": answer,
-                        "grounded": True,
-                        "provider": "gemini-2.5-flash",
-                        "contextSummary": {
-                            "monitoredCentres": context["totalCentres"],
-                            "activeAlerts": context["criticalAlertsCount"]
+                    candidates = data.get("candidates", [])
+                    if candidates:
+                        parts = candidates[0].get("content", {}).get("parts", [])
+                        # Extract non-thought text parts
+                        text_parts = [p.get("text", "") for p in parts if "text" in p]
+                        answer = "".join(text_parts).strip()
+                        return {
+                            "query": user_query,
+                            "answer": answer,
+                            "grounded": True,
+                            "provider": "gemini-3.8-flash",
+                            "contextSummary": {
+                                "monitoredCentres": context["totalCentres"],
+                                "activeAlerts": context["criticalAlertsCount"]
+                            }
                         }
-                    }
                 else:
                     logger.warning(f"Gemini API returned status {resp.status_code}. Using grounded fallback.")
             except Exception as e:

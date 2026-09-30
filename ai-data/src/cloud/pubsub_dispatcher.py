@@ -17,7 +17,7 @@ logger = logging.getLogger("AarogyaGrid.PubSub")
 class PubSubAlertDispatcher:
     def __init__(self, topic_name: str = "aarogyagrid-critical-alerts"):
         self.topic_name = topic_name
-        self.project_id = os.getenv("GCP_PROJECT_ID", "aarogyagrid-dev")
+        self.project_id = os.getenv("GCP_PROJECT_ID", "aarogyagrid-ai")
         self.publisher = None
         self.in_memory_event_log: List[Dict[str, Any]] = []
         self._init_publisher()
