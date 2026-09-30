@@ -94,14 +94,18 @@ export default function Shell({ children }) {
             <b>AarogyaGrid</b>
             <small>AI HEALTH NETWORK</small>
           </div>
-          {mobileOpen && (
-            <button
-              onClick={() => setMobileOpen(false)}
-              style={{ marginLeft: 'auto', background: 'none', border: 'none', fontSize: '16px', cursor: 'pointer' }}
-            >
-              Close
-            </button>
-          )}
+          <button
+            className="sidebar-toggle-btn"
+            onClick={toggleSidebar}
+            title="Collapse navigation menu"
+            aria-label="Collapse navigation menu"
+          >
+            <span className="hamburger-box">
+              <span className="hamburger-line" />
+              <span className="hamburger-line" />
+              <span className="hamburger-line" />
+            </span>
+          </button>
         </div>
 
         <nav>
@@ -154,18 +158,18 @@ export default function Shell({ children }) {
       <main className={`main ${sidebarCollapsed ? 'expanded' : ''}`}>
         <header className="topbar">
           <div className="topbar-left" style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+            {/* Hamburger button visible only when sidebar is closed/collapsed */}
             <button
-              className="menu-btn-extreme-left"
+              className={`menu-btn-extreme-left ${!sidebarCollapsed ? 'hidden-on-desktop' : ''}`}
               onClick={toggleSidebar}
-              aria-label="Toggle navigation menu"
-              title="Toggle sidebar navigation"
+              aria-label="Open navigation menu"
+              title="Open navigation menu"
             >
               <span className="hamburger-box">
                 <span className="hamburger-line" />
                 <span className="hamburger-line" />
                 <span className="hamburger-line" />
               </span>
-              <span className="menu-text">Menu</span>
             </button>
             <div className="topbar-headings">
               <span className="eyebrow">NATIONAL HEALTH RESOURCE NETWORK</span>

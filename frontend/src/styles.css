@@ -101,6 +101,28 @@ a {
   padding: 0 8px 24px;
 }
 
+.sidebar-toggle-btn {
+  margin-left: auto;
+  width: 32px;
+  height: 32px;
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  color: var(--ink);
+  padding: 0;
+}
+
+.sidebar-toggle-btn:hover {
+  background: #ebe9de;
+  border-color: var(--muted);
+  transform: scale(1.03);
+}
+
 .brand-mark {
   width: 38px;
   height: 38px;
@@ -266,19 +288,23 @@ a {
 }
 
 .menu-btn-extreme-left {
-  display: inline-flex !important;
+  display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 8px 13px;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
   background: var(--cream);
   border: 1px solid var(--line);
   border-radius: 8px;
-  font-size: 11px;
-  font-weight: 700;
   color: var(--ink);
   cursor: pointer;
   transition: all 0.2s ease;
   flex-shrink: 0;
+}
+
+.menu-btn-extreme-left.hidden-on-desktop {
+  display: none !important;
 }
 
 .menu-btn-extreme-left:hover {
@@ -288,11 +314,12 @@ a {
 }
 
 .hamburger-box {
-  width: 15px;
-  height: 11px;
+  width: 16px;
+  height: 12px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  pointer-events: none;
 }
 
 .hamburger-line {
@@ -301,12 +328,7 @@ a {
   height: 2px;
   background: var(--ink);
   border-radius: 2px;
-}
-
-.menu-text {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.3px;
+  transition: all 0.2s ease;
 }
 
 .eyebrow {
@@ -1176,10 +1198,10 @@ th {
     margin-left: 0;
   }
 
-  .mobile-toggle, .menu-btn-extreme-left {
-    display: inline-flex;
+  .mobile-toggle, .menu-btn-extreme-left, .menu-btn-extreme-left.hidden-on-desktop {
+    display: inline-flex !important;
     align-items: center;
-    gap: 6px;
+    justify-content: center;
   }
 
   .topbar {
