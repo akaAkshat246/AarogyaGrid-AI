@@ -109,7 +109,6 @@ export default function Login() {
           <div className="brand-mark">A</div>
           <b>AarogyaGrid AI</b>
         </div>
-        <span className="eyebrow">OPERATIONS PORTAL</span>
         <h2>Welcome back</h2>
         <p className="muted">Sign in to monitor your health network.</p>
 
