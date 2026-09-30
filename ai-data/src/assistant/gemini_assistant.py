@@ -164,7 +164,7 @@ class GroundedOperationsAssistant:
 
         # If Gemini API key is configured, call Google Generative AI with fast model fallback
         if api_key:
-            models_to_try = ["gemini-3.5-flash-lite", "gemini-flash-latest", "gemini-3.5-flash"]
+            models_to_try = ["gemini-2.0-flash", "gemini-1.5-flash"]
             prompt = (
                 "You are AarogyaGrid Health Operations Assistant. You provide operational guidance on healthcare resources (stock, beds, staff, transfers).\n"
                 "RULES:\n"
@@ -186,7 +186,7 @@ class GroundedOperationsAssistant:
                             "Content-Type": "application/json",
                             "x-goog-api-key": api_key
                         },
-                        timeout=8
+                        timeout=4
                     )
                     if resp.status_code == 200:
                         data = resp.json()

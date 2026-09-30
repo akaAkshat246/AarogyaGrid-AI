@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import Brand from './Brand';
+import { generateDistrictAuditPdf } from '../services/pdfReportGenerator';
 
 const navItems = [
   { to: '/dashboard', label: 'Dashboard' },
@@ -27,6 +28,13 @@ export default function Shell({ children }) {
     { id: 'alt-2', title: 'Outbreak Bed Overload', phc: 'PHC Muradnagar Rural', time: '18m ago', severity: 'CRITICAL' },
     { id: 'alt-3', title: 'High Dengue Admission Footfall', phc: 'PHC Laxmi Nagar', time: '42m ago', severity: 'HIGH_RISK' }
   ]);
+
+  const handleExportPdf = () => {
+    generateDistrictAuditPdf({
+      district: 'Delhi-NCR Central Hub',
+      generatedBy: user?.name || 'District Chief Medical Officer'
+    });
+  };
 
   const toggleSidebar = () => {
     if (window.innerWidth <= 900) {
@@ -121,9 +129,6 @@ export default function Shell({ children }) {
         </nav>
 
         <div className="side-bottom">
-          <div className="status">
-            <i /> Services online
-          </div>
           <button
             className="profile"
             onClick={() => {
@@ -177,10 +182,18 @@ export default function Shell({ children }) {
             </div>
           </div>
 
-          <div className="top-actions" style={{ position: 'relative' }}>
-            <span className="live">
-              <i /> Live monitoring
-            </span>
+          <div className="top-actions" style={{ position: 'relative', display: 'flex', alignItems: 'center', gap: '8px' }}>
+
+            {/* Export PDF Audit Button */}
+            <button
+              className="icon-btn"
+              onClick={handleExportPdf}
+              title="Download Clinical Resource Audit PDF Report"
+              aria-label="Export PDF Audit Report"
+              style={{ fontSize: '11px', fontWeight: 'bold', background: 'var(--sage)', color: '#fff', borderColor: 'var(--sage)' }}
+            >
+              Export PDF
+            </button>
 
             {/* Quick Search Button */}
             <button

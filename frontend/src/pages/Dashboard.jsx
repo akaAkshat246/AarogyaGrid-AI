@@ -42,9 +42,25 @@ export default function Dashboard() {
         title="Network Overview"
         desc="Real-time resource telemetry and risk detection across your connected primary health facilities."
         action={
-          <Link className="primary" to="/predictions">
-            Run AI Forecast
-          </Link>
+          <div style={{ display: 'flex', gap: '8px' }}>
+            <button
+              className="icon-btn"
+              onClick={() => {
+                import('../services/pdfReportGenerator').then(m => {
+                  m.generateDistrictAuditPdf({
+                    district: 'Delhi-NCR Central Hub',
+                    generatedBy: 'District Health Administrator'
+                  });
+                });
+              }}
+              style={{ fontWeight: 'bold' }}
+            >
+              Export PDF Audit
+            </button>
+            <Link className="primary" to="/predictions">
+              Run AI Forecast
+            </Link>
+          </div>
         }
       />
 
