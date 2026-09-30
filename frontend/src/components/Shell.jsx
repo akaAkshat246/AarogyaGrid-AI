@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import Brand from './Brand';
 
 const navItems = [
   { to: '/dashboard', label: 'Dashboard' },
@@ -87,18 +88,15 @@ export default function Shell({ children }) {
       )}
 
       {/* Sidebar Navigation */}
-      <aside className={`sidebar ${sidebarCollapsed ? 'collapsed' : ''} ${mobileOpen ? 'open' : ''}`}>
+      <aside id="app-navigation" className={`sidebar ${sidebarCollapsed ? 'collapsed' : ''} ${mobileOpen ? 'open' : ''}`}>
         <div className="brand">
-          <div className="brand-mark">A</div>
-          <div>
-            <b>AarogyaGrid</b>
-            <small>AI HEALTH NETWORK</small>
-          </div>
+          <Brand />
           <button
             className="sidebar-toggle-btn"
             onClick={toggleSidebar}
             title="Collapse navigation menu"
             aria-label="Collapse navigation menu"
+            aria-controls="app-navigation"
           >
             <span className="hamburger-box">
               <span className="hamburger-line" />
@@ -164,6 +162,7 @@ export default function Shell({ children }) {
               onClick={toggleSidebar}
               aria-label="Open navigation menu"
               title="Open navigation menu"
+              aria-controls="app-navigation"
             >
               <span className="hamburger-box">
                 <span className="hamburger-line" />
@@ -171,6 +170,7 @@ export default function Shell({ children }) {
                 <span className="hamburger-line" />
               </span>
             </button>
+            <Brand className={`shell-brand ${sidebarCollapsed ? 'is-visible' : ''}`} />
             <div className="topbar-headings">
               <span className="eyebrow">NATIONAL HEALTH RESOURCE NETWORK</span>
               <h1>Predict. Share. Respond.</h1>
