@@ -11,17 +11,22 @@ import json
 import logging
 import requests
 from typing import Dict, Any, List, Optional
+from dotenv import load_dotenv
+
 from ..storage.store import BaseDataStore, get_store
 from ..ml.forecasting import DemandForecaster
 from ..risk.risk_engine import RiskEngine
 from ..redistribution.redistribution_engine import RedistributionEngine
+
+# Load .env variables from root or local dir
+load_dotenv()
 
 logger = logging.getLogger("AarogyaGrid.Assistant")
 
 class GroundedOperationsAssistant:
     def __init__(self, store: Optional[BaseDataStore] = None, api_key: Optional[str] = None):
         self.store = store or get_store()
-        self.api_key = api_key or os.getenv("GEMINI_API_KEY", "")
+        self.api_key = api_key or os.getenv("GEMINI_API_KEY", "").strip()
         self.forecaster = DemandForecaster()
         self.risk_engine = RiskEngine()
         self.redist_engine = RedistributionEngine()
@@ -152,55 +157,59 @@ class GroundedOperationsAssistant:
 
     def query(self, user_query: str, district: Optional[str] = None) -> Dict[str, Any]:
         """
-        Executes grounded assistant query with fallback support.
+        Executes grounded assistant query with live Google Generative AI API.
         """
         context = self._collect_live_context(district=district)
+        api_key = (self.api_key or os.getenv("GEMINI_API_KEY", "")).strip()
 
-        # If Gemini API key is configured, call Google Generative AI
-        if self.api_key:
-            try:
-                prompt = (
-                    "You are AarogyaGrid Health Operations Assistant. You provide operational guidance on healthcare resources (stock, beds, staff, transfers).\n"
-                    "RULES:\n"
-                    "- Ground your answer STRICTLY on the live system data provided below.\n"
-                    "- Do NOT invent stock numbers, centres, or medical diagnoses.\n"
-                    "- State clearly that you provide operational recommendations, not medical advice.\n"
-                    "- Remind administrators that transfers require explicit human approval.\n\n"
-                    f"LIVE SYSTEM CONTEXT:\n{json.dumps(context, indent=2)}\n\n"
-                    f"USER QUESTION: {user_query}"
-                )
-                url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent?key={self.api_key}"
-                resp = requests.post(
-                    url,
-                    json={"contents": [{"parts": [{"text": prompt}]}]},
-                    headers={
-                        "Content-Type": "application/json",
-                        "x-goog-api-key": self.api_key
-                    },
-                    timeout=12
-                )
-                if resp.status_code == 200:
-                    data = resp.json()
-                    candidates = data.get("candidates", [])
-                    if candidates:
-                        parts = candidates[0].get("content", {}).get("parts", [])
-                        # Extract non-thought text parts
-                        text_parts = [p.get("text", "") for p in parts if "text" in p]
-                        answer = "".join(text_parts).strip()
-                        return {
-                            "query": user_query,
-                            "answer": answer,
-                            "grounded": True,
-                            "provider": "gemini-3.8-flash",
-                            "contextSummary": {
-                                "monitoredCentres": context["totalCentres"],
-                                "activeAlerts": context["criticalAlertsCount"]
-                            }
-                        }
-                else:
-                    logger.warning(f"Gemini API returned status {resp.status_code}. Using grounded fallback.")
-            except Exception as e:
-                logger.warning(f"Gemini API call failed ({e}). Falling back to local grounded engine.")
+        # If Gemini API key is configured, call Google Generative AI with fast model fallback
+        if api_key:
+            models_to_try = ["gemini-3.5-flash-lite", "gemini-flash-latest", "gemini-3.5-flash"]
+            prompt = (
+                "You are AarogyaGrid Health Operations Assistant. You provide operational guidance on healthcare resources (stock, beds, staff, transfers).\n"
+                "RULES:\n"
+                "- Ground your answer STRICTLY on the live system data provided below.\n"
+                "- Do NOT invent stock numbers, centres, or medical diagnoses.\n"
+                "- State clearly that you provide operational recommendations, not medical advice.\n"
+                "- Remind administrators that transfers require explicit human approval.\n\n"
+                f"LIVE SYSTEM CONTEXT:\n{json.dumps(context, indent=2)}\n\n"
+                f"USER QUESTION: {user_query}"
+            )
+
+            for model_name in models_to_try:
+                try:
+                    url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:generateContent?key={api_key}"
+                    resp = requests.post(
+                        url,
+                        json={"contents": [{"parts": [{"text": prompt}]}]},
+                        headers={
+                            "Content-Type": "application/json",
+                            "x-goog-api-key": api_key
+                        },
+                        timeout=8
+                    )
+                    if resp.status_code == 200:
+                        data = resp.json()
+                        candidates = data.get("candidates", [])
+                        if candidates:
+                            parts = candidates[0].get("content", {}).get("parts", [])
+                            text_parts = [p.get("text", "") for p in parts if "text" in p]
+                            answer = "".join(text_parts).strip()
+                            if answer:
+                                return {
+                                    "query": user_query,
+                                    "answer": answer,
+                                    "grounded": True,
+                                    "provider": f"gemini ({model_name})",
+                                    "contextSummary": {
+                                        "monitoredCentres": context["totalCentres"],
+                                        "activeAlerts": context["criticalAlertsCount"]
+                                    }
+                                }
+                    else:
+                        logger.warning(f"Model {model_name} returned status {resp.status_code}. Trying next model...")
+                except Exception as e:
+                    logger.warning(f"Model {model_name} call failed ({e}). Trying next model...")
 
         # Local deterministic grounded fallback
         answer = self._generate_mock_grounded_response(user_query, context)
@@ -214,3 +223,4 @@ class GroundedOperationsAssistant:
                 "activeAlerts": context["criticalAlertsCount"]
             }
         }
+
