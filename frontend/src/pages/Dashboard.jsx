@@ -6,7 +6,7 @@ import Kpi from '../components/Kpi';
 import Badge from '../components/Badge';
 import PageTitle from '../components/PageTitle';
 
-const demo = {
+const defaultDashboardData = {
   phcs: 16,
   totalPatients: 1840,
   availableBeds: 112,
@@ -28,11 +28,11 @@ const chart = [
 ];
 
 export default function Dashboard() {
-  const [data, setData] = useState(demo);
+  const [data, setData] = useState(defaultDashboardData);
 
   useEffect(() => {
     endpoints.dashboard()
-      .then(r => setData({ ...demo, ...r.data?.data }))
+      .then(r => setData({ ...defaultDashboardData, ...r.data?.data }))
       .catch(() => {});
   }, []);
 

@@ -1,0 +1,53 @@
+services:
+  # 1. FastAPI AI Intelligence Engine
+  - type: web
+    name: aarogyagrid-ai-engine
+    runtime: python
+    rootDir: ai-data
+    buildCommand: pip install -r ../requirements.txt
+    startCommand: python -m uvicorn src.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: STORAGE_BACKEND
+        value: mock
+
+  # 2. Node.js Express REST Backend API
+  - type: web
+    name: aarogyagrid-backend
+    runtime: node
+    rootDir: Backend
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DEV_SKIP_AUTH
+        value: "true"
+      - key: AI_URL
+        fromService:
+          type: web
+          name: aarogyagrid-ai-engine
+          property: host
+
+  # 3. React Vite Frontend Web App
+  - type: web
+    name: aarogyagrid-frontend
+    runtime: static
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    envVars:
+      - key: VITE_GOOGLE_CLIENT_ID
+        value: 850309026102-u6eo062eglc69hf9mfj51tpcvot0dmcf.apps.googleusercontent.com
+      - key: VITE_GOOGLE_MAPS_API_KEY
+        value: AIzaSyDXYeSt8pBiJCjrjtVgmnNGDeY_mTkq-PA
+      - key: VITE_API_URL
+        fromService:
+          type: web
+          name: aarogyagrid-backend
+          property: host

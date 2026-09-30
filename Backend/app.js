@@ -16,9 +16,15 @@ export function createApp({ store, auth, config, predict }) {
   app.disable('x-powered-by');
   app.locals.store = store;
   app.locals.predict = predict;
-  app.use(cors({ origin(origin, callback) {
-    callback(null, !origin || config.origins.includes(origin));
-  }}));
+  app.use(cors({
+    origin(origin, callback) {
+      if (!origin || config.origins.includes('*') || config.origins.includes(origin)) {
+        return callback(null, true);
+      }
+      callback(null, false);
+    },
+    credentials: true
+  }));
   app.use(express.json({ limit: '100kb' }));
   app.get('/', (req, res) => res.json({ success: true, message: 'AarogyaGrid API is running' }));
   app.get('/health', (req, res) => res.json({ success: true, status: 'ok' }));

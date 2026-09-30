@@ -46,7 +46,7 @@ export function AuthProvider({ children }) {
     const users = JSON.parse(localStorage.getItem(USERS_KEY) || '[]');
     const u = users.find(x => x.email.toLowerCase() === email.toLowerCase() && x.password === password);
     if (!u) {
-      throw new Error('Invalid email or password. Try Sign Up or use Demo Website.');
+      throw new Error('Invalid password or email.');
     }
     setUser({ name: u.name, email: u.email, mode: 'account' });
   };
@@ -77,11 +77,10 @@ export function AuthProvider({ children }) {
     return googleUser;
   };
 
-  const demo = () => setUser({ name: 'Demo Administrator', email: 'demo@aarogyagrid.ai', mode: 'demo' });
   const logout = () => setUser(null);
 
   return (
-    <AuthContext.Provider value={{ user, signup, login, loginWithGoogle, demo, logout }}>
+    <AuthContext.Provider value={{ user, signup, login, loginWithGoogle, logout }}>
       {children}
     </AuthContext.Provider>
   );

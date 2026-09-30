@@ -129,31 +129,32 @@ export default function Shell({ children }) {
         </nav>
 
         <div className="side-bottom">
-          <button
-            className="profile"
-            onClick={() => {
-              if (window.confirm('Do you want to log out of AarogyaGrid AI?')) {
-                logout();
-                nav('/login');
-              }
-            }}
-            title="Click to log out"
-          >
+          <div className="profile">
             {user?.picture ? (
               <img
                 src={user.picture}
                 alt="Profile"
-                style={{ width: '34px', height: '34px', borderRadius: '50%', objectFit: 'cover' }}
+                style={{ width: '34px', height: '34px', borderRadius: '50%', objectFit: 'cover', flexShrink: 0 }}
               />
             ) : (
-              <span>{(user?.name || 'A')[0]}</span>
+              <span style={{ flexShrink: 0 }}>{(user?.name || 'A')[0]}</span>
             )}
-            <div>
-              <b>{user?.name || 'Administrator'}</b>
-              <small>{user?.mode === 'google' ? 'Google Authenticated' : user?.mode === 'demo' ? 'Demo Administrator' : 'Health Officer'}</small>
+            <div style={{ minWidth: 0, flex: 1, overflow: 'hidden' }}>
+              <b style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{user?.name || 'Administrator'}</b>
+              <small style={{ display: 'block', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{user?.mode === 'google' ? 'Google Authenticated' : 'Health Officer'}</small>
             </div>
-            <em style={{ fontSize: '11px', color: '#999' }}>Exit</em>
-          </button>
+            <button
+              type="button"
+              className="exit-action-btn"
+              onClick={() => {
+                logout();
+                nav('/login', { replace: true });
+              }}
+              title="Log out and return to Login"
+            >
+              Exit
+            </button>
+          </div>
         </div>
       </aside>
 

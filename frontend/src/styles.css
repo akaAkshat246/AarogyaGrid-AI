@@ -254,6 +254,25 @@ a {
   color: #aaa;
 }
 
+.exit-action-btn {
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 3px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #c53030;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-left: auto;
+}
+
+.exit-action-btn:hover {
+  background: #fff5f5;
+  border-color: #feb2b2;
+  color: #9b2c2c;
+}
+
 /* Main Content Structure */
 .main {
   margin-left: 250px;
@@ -910,6 +929,220 @@ th {
   margin-bottom: 14px;
 }
 
+/* Uber-Style Live Real-Time Route Navigation HUD */
+.nav-hud {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  right: 14px;
+  max-width: 440px;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  padding: 14px 16px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.nav-hud-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.nav-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #e6f4ea;
+  color: #137333;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.nav-status-badge.arrived {
+  background: #e8f0fe;
+  color: #1a73e8;
+}
+
+.nav-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #34a853;
+  box-shadow: 0 0 0 2px rgba(52, 168, 83, 0.3);
+  animation: pulseDot 1.4s infinite;
+}
+
+@keyframes pulseDot {
+  0% { transform: scale(0.9); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.6; }
+  100% { transform: scale(0.9); opacity: 1; }
+}
+
+.nav-maneuver {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-maneuver-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: #1a73e8;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.nav-maneuver-text {
+  flex: 1;
+}
+
+.nav-maneuver-text b {
+  font-size: 13px;
+  color: #1f1f1f;
+  display: block;
+}
+
+.nav-maneuver-text small {
+  font-size: 11px;
+  color: #666;
+  display: block;
+}
+
+.nav-metrics-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f8f9fa;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #eef0f2;
+}
+
+.nav-metric-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-metric-item span {
+  font-size: 9px;
+  color: #888;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.nav-metric-item b {
+  font-size: 13px;
+  color: #111;
+}
+
+.nav-progress-wrap {
+  position: relative;
+  height: 6px;
+  background: #e9ecef;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.nav-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #1a73e8, #34a853);
+  border-radius: 3px;
+  transition: width 0.15s ease-out;
+}
+
+.nav-controls-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 8px;
+}
+
+.nav-ctrl-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border-radius: 7px;
+  border: 1px solid #dadce0;
+  background: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  color: #3c4043;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nav-ctrl-btn:hover {
+  background: #f1f3f4;
+  border-color: #c6c9cc;
+}
+
+.nav-ctrl-btn.active {
+  background: #e8f0fe;
+  color: #1a73e8;
+  border-color: #aecbfa;
+}
+
+/* Vehicle Live Marker Pulse */
+.live-vehicle-marker {
+  position: relative;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.live-vehicle-radar {
+  position: absolute;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(26, 115, 232, 0.35);
+  animation: radarPulse 1.6s infinite cubic-bezier(0.2, 0.8, 0.2, 1);
+  pointer-events: none;
+}
+
+@keyframes radarPulse {
+  0% { transform: scale(0.6); opacity: 0.9; }
+  60% { transform: scale(1.6); opacity: 0.3; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+.live-vehicle-body {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #1a73e8;
+  border: 2.5px solid #ffffff;
+  box-shadow: 0 3px 12px rgba(26, 115, 232, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  z-index: 2;
+  transition: transform 0.1s linear;
+}
+
+
 /* Copilot Chat */
 .copilot {
   max-width: 920px;
@@ -1137,24 +1370,6 @@ th {
   flex: 1;
 }
 
-.demo-btn {
-  width: 100%;
-  border: 1px solid #dfe6d5;
-  background: #f7f9f2;
-  border-radius: 10px;
-  padding: 11px;
-  color: #60734b;
-  font-weight: 700;
-  font-size: 11px;
-}
-
-.demo-btn small {
-  display: block;
-  color: #999;
-  font-weight: 400;
-  font-size: 9px;
-  margin-top: 3px;
-}
 
 .auth-foot {
   text-align: center;

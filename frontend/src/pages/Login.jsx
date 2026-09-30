@@ -9,6 +9,7 @@ export default function Login() {
   const [password, setPassword] = useState('');
   const [err, setErr] = useState('');
   const [googleLoading, setGoogleLoading] = useState(false);
+  const [isGsiRendered, setIsGsiRendered] = useState(false);
   const { login, loginWithGoogle } = useAuth();
   const nav = useNavigate();
   const googleBtnRef = useRef(null);

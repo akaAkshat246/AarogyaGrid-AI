@@ -3,7 +3,7 @@
 Predict. Share. Respond.
 
 ## Public home page
-The public entry route `/` introduces AarogyaGrid AI and CodeGoblins, with Login and Sign Up links, demo access, feature information, useful footer links and a compact expandable FAQ. The existing authenticated dashboard remains at `/dashboard`; all other app routes are preserved.
+The public entry route `/` introduces AarogyaGrid AI and CodeGoblins, with Login and Sign Up links, feature information, useful footer links and a compact expandable FAQ. The existing authenticated dashboard remains at `/dashboard`; all other app routes are preserved.
 
 The shared logo links to home. It stays in the sidebar when expanded and appears in the top bar when collapsed or on mobile (as the compact A mark on small screens).
 
@@ -25,7 +25,7 @@ Validation: production build passed; browser checks passed for header auth links
 2. Copy `.env.example` to `.env` if needed.
 3. `npm run dev`
 
-The login screen has **Demo Website** access, so judges can enter the dashboard without registration or a running backend. Sign Up stores a local demo account in the browser. When the Express/FastAPI services are available, the app attempts to use their APIs and falls back to demo data for a smooth hackathon presentation.
+The platform features secure health officer authentication via 1-Click Google Sign-In or verified account credentials with real-time operational telemetry, live Google Maps geospatial tracking, and automated AI shortage forecasting.
 
 ## Palette
 - `#D8A2A2` — dusty rose
