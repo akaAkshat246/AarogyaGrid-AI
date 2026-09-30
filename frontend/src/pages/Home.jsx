@@ -77,14 +77,8 @@ export default function Home() {
           </nav>
 
           <div className="landing-actions">
-            {user ? (
-              <Link className="primary" to="/dashboard">Open Dashboard →</Link>
-            ) : (
-              <>
-                <Link className="secondary" to="/login">Sign In</Link>
-                <Link className="primary" to="/signup">Get Started</Link>
-              </>
-            )}
+            <Link className="secondary" to="/login">Sign In</Link>
+            <Link className="primary" to="/login">Open Dashboard →</Link>
           </div>
         </div>
       </header>
@@ -105,14 +99,8 @@ export default function Home() {
             </p>
             
             <div className="landing-hero-actions">
-              {user ? (
-                <Link className="primary" to="/dashboard">Go to Dashboard →</Link>
-              ) : (
-                <>
-                  <Link className="primary" to="/login">Sign In to Dashboard →</Link>
-                  <Link className="secondary" to="/signup">Register Facility (Sign Up)</Link>
-                </>
-              )}
+              <Link className="primary" to="/login">Go to Dashboard →</Link>
+              <Link className="secondary" to="/signup">Register Facility (Sign Up)</Link>
             </div>
             
             <div className="landing-badges">
@@ -271,14 +259,8 @@ export default function Home() {
             <p>Sign in with your certified health administrator credentials to access real-time telemetry and AI redistribution.</p>
           </div>
           <div className="landing-cta-actions" style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
-            {user ? (
-              <Link className="primary" to="/dashboard">Go to Dashboard →</Link>
-            ) : (
-              <>
-                <Link className="primary" to="/login">Sign In to Dashboard →</Link>
-                <Link className="secondary" to="/signup">Create Account</Link>
-              </>
-            )}
+            <Link className="primary" to="/login">Go to Dashboard →</Link>
+            <Link className="secondary" to="/signup">Create Account (Sign Up)</Link>
           </div>
         </section>
 
