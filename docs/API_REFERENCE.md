@@ -86,3 +86,24 @@ Executes simulated Dengue outbreak stress scenario (+45% footfall, 2.5x IV fluid
 
 ### `POST /federated/train-round`
 Executes one round of Federated Averaging (FedAvg) across 3 regional nodes.
+
+---
+
+## 3. Google Maps Platform Integration
+
+### Map Script Tag (Active Key):
+```html
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOVYRIgupAurZup5y1PRh8Ismb1A3lLao&libraries=places"></script>
+```
+
+### Center Coordinates (Delhi-NCR Hub):
+* **Center Latitude:** `28.6139`
+* **Center Longitude:** `77.2090`
+* **Default Zoom:** `11`
+
+### Pin Color Legend for PHC Markers:
+* 🟢 **HEALTHY / Stable:** `#10b981` (Stock adequate >5 days, Beds <70%)
+* 🟡 **WATCH:** `#f59e0b` (Stock 3–5 days, Beds 70–85%)
+* 🟠 **HIGH RISK:** `#f97316` (Stock 2–3 days, Beds 85–92%)
+* 🔴 **CRITICAL:** `#f43f5e` (Stockout <2 days, Beds >92%)
+
