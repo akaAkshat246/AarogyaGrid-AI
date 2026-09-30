@@ -17,6 +17,7 @@ export default function Shell({ children }) {
   const { user, logout } = useAuth();
   const nav = useNavigate();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [alertsOpen, setAlertsOpen] = useState(false);
@@ -25,6 +26,14 @@ export default function Shell({ children }) {
     { id: 'alt-2', title: 'Outbreak Bed Overload', phc: 'PHC Muradnagar Rural', time: '18m ago', severity: 'CRITICAL' },
     { id: 'alt-3', title: 'High Dengue Admission Footfall', phc: 'PHC Laxmi Nagar', time: '42m ago', severity: 'HIGH_RISK' }
   ]);
+
+  const toggleSidebar = () => {
+    if (window.innerWidth <= 900) {
+      setMobileOpen(prev => !prev);
+    } else {
+      setSidebarCollapsed(prev => !prev);
+    }
+  };
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -78,7 +87,7 @@ export default function Shell({ children }) {
       )}
 
       {/* Sidebar Navigation */}
-      <aside className={`sidebar ${mobileOpen ? 'open' : ''}`}>
+      <aside className={`sidebar ${sidebarCollapsed ? 'collapsed' : ''} ${mobileOpen ? 'open' : ''}`}>
         <div className="brand">
           <div className="brand-mark">A</div>
           <div>
@@ -142,14 +151,14 @@ export default function Shell({ children }) {
       </aside>
 
       {/* Main Content Area */}
-      <main className="main">
+      <main className={`main ${sidebarCollapsed ? 'expanded' : ''}`}>
         <header className="topbar">
           <div className="topbar-left" style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
             <button
-              className="mobile-toggle menu-btn-extreme-left"
-              onClick={() => setMobileOpen(!mobileOpen)}
+              className="menu-btn-extreme-left"
+              onClick={toggleSidebar}
               aria-label="Toggle navigation menu"
-              title="Open navigation menu"
+              title="Toggle sidebar navigation"
             >
               <span className="hamburger-box">
                 <span className="hamburger-line" />

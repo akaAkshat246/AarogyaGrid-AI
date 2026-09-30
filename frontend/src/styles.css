@@ -14,6 +14,30 @@
 
 * {
   box-sizing: border-box;
+  -ms-overflow-style: none !important;  /* IE and Edge */
+  scrollbar-width: none !important;  /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari, Opera and all browsers */
+*::-webkit-scrollbar,
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+::-webkit-scrollbar {
+  width: 0px !important;
+  height: 0px !important;
+  display: none !important;
+  background: transparent !important;
+}
+
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-track {
+  background: transparent !important;
+  border: none !important;
+}
+
+html, body {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
 }
 
 body {
@@ -63,7 +87,11 @@ a {
   position: fixed;
   inset: 0 auto 0 0;
   z-index: 100;
-  transition: transform 0.25s ease-in-out;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sidebar.collapsed {
+  transform: translateX(-100%);
 }
 
 .brand {
@@ -210,6 +238,11 @@ a {
   min-width: 0;
   display: flex;
   flex-direction: column;
+  transition: margin-left 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.main.expanded {
+  margin-left: 0;
 }
 
 .topbar {
@@ -233,7 +266,7 @@ a {
 }
 
 .menu-btn-extreme-left {
-  display: none;
+  display: inline-flex !important;
   align-items: center;
   gap: 8px;
   padding: 8px 13px;
@@ -251,12 +284,12 @@ a {
 .menu-btn-extreme-left:hover {
   background: #ebe9de;
   border-color: var(--muted);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
 
 .hamburger-box {
-  width: 14px;
-  height: 10px;
+  width: 15px;
+  height: 11px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
