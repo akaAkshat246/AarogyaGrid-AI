@@ -12,7 +12,7 @@ const schema = z.object({
   AI_PREDICT_PATH: z.string().regex(/^\/(?!\/)/).default('/predict'),
   AI_TIMEOUT_MS: z.coerce.number().int().min(100).max(120000).default(15000),
   AI_API_KEY: z.string().default(''),
-  CORS_ORIGINS: z.string().default('http://localhost:5173,http://localhost:3000')
+  CORS_ORIGINS: z.string().default('http://localhost:5173,http://127.0.0.1:5173,http://localhost:3000,http://127.0.0.1:3000')
 });
 export function parseEnv(input) {
   const data = schema.parse(input);

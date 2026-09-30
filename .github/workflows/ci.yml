@@ -54,3 +54,25 @@ jobs:
       - name: Run Backend Unit Tests
         working-directory: ./Backend
         run: npm test
+
+  build-frontend:
+    name: React + Vite Frontend Build & Type Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install Frontend Dependencies
+        working-directory: ./frontend
+        run: npm ci
+
+      - name: Build Production Frontend Bundle
+        working-directory: ./frontend
+        run: npm run build
+

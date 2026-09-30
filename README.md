@@ -102,20 +102,59 @@ npm start
 ```
 * Backend Health check: [http://127.0.0.1:5000/health](http://127.0.0.1:5000/health)
 
+### 5. Start React + Vite Frontend (Port 5173)
+
+```powershell
+cd frontend
+npm install
+npm run dev
+```
+* Frontend Dashboard: [http://localhost:5173](http://localhost:5173)
+
+---
+
+## One-Command Full Stack Startup (Docker Compose)
+
+You can launch all 3 services simultaneously with a single command:
+
+```bash
+docker compose up --build
+```
+
+- **Frontend Dashboard:** [http://localhost:5173](http://localhost:5173)
+- **Node.js Express Backend:** [http://localhost:5000](http://localhost:5000)
+- **Python FastAPI AI Engine:** [http://localhost:8000](http://localhost:8000) (Docs: [/docs](http://localhost:8000/docs))
+
+---
+
+## 2-Minute Demo Script & Pitch CLI
+
+Run the automated live demonstration script to pitch the complete end-to-end flow:
+
+```powershell
+.\.venv\Scripts\python.exe scripts/demo_runner.py
+```
+
 ---
 
 ## Running Automated Tests
 
-### AI & Data Engine Test Suite (Pytest)
+### 1. AI & Data Engine Test Suite (Pytest - 11/11 Passing)
 ```powershell
 $env:PYTHONPATH="d:\AarogyaGrid-AI\ai-data"
 .\.venv\Scripts\python.exe -m pytest ai-data/tests/ -v
 ```
 
-### Backend API Test Suite (Node.js Test Runner)
+### 2. Backend API Test Suite (Node.js Test Runner - 8/8 Passing)
 ```powershell
 cd Backend
 npm test
+```
+
+### 3. Frontend Production Build
+```powershell
+cd frontend
+npm run build
 ```
 
 ---
@@ -132,5 +171,8 @@ npm test
 | **Python AI** | `POST` | `/emergency/dengue-surge` | Dengue outbreak stress scenario runner |
 | **Python AI** | `POST` | `/federated/train-round` | 3-node Federated Averaging round |
 | **Node API** | `GET` | `/api/dashboard` | Aggregated PHC metrics |
+| **Node API** | `GET` | `/api/phcs` | List all connected PHC health centres |
+| **Node API** | `GET` | `/api/inventory/:phcId` | Live inventory with shortage signals |
 | **Node API** | `POST` | `/api/transfers` | Create/propose transfer record |
 | **Node API** | `PUT` | `/api/transfers/:id/status` | Advance transfer approval lifecycle |
+
