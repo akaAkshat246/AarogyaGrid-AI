@@ -93,7 +93,7 @@ Executes one round of Federated Averaging (FedAvg) across 3 regional nodes.
 
 ### Map Script Tag (Active Key):
 ```html
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOVYRIgupAurZup5y1PRh8Ismb1A3lLao&libraries=places"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXYeSt8pBiJCjrjtVgmnNGDeY_mTkq-PA&libraries=places,geometry"></script>
 ```
 
 ### Center Coordinates (Delhi-NCR Hub):
