@@ -1,0 +1,1 @@
+import React from 'react';export default function Kpi({label,value,sub,icon,tone=''}){return <div className={`kpi ${tone}`}><div className="kpi-icon">{icon}</div><div><span>{label}</span><strong>{value}</strong><small>{sub}</small></div></div>}

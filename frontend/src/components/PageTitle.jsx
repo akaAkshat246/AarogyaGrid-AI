@@ -1,0 +1,1 @@
+import React from 'react';export default function PageTitle({title,desc,action}){return <div className="page-title"><div><span className="eyebrow">AAROGYAGRID AI</span><h2>{title}</h2><p>{desc}</p></div>{action}</div>}
