@@ -9,8 +9,7 @@ export default function Login() {
   const [password, setPassword] = useState('');
   const [err, setErr] = useState('');
   const [googleLoading, setGoogleLoading] = useState(false);
-  const [isGsiRendered, setIsGsiRendered] = useState(false);
-  const { login, loginWithGoogle, demo } = useAuth();
+  const { login, loginWithGoogle } = useAuth();
   const nav = useNavigate();
   const googleBtnRef = useRef(null);
 
@@ -178,12 +177,6 @@ export default function Login() {
           </label>
           <button className="primary wide" style={{ marginTop: '10px' }}>Sign In with Email</button>
         </form>
-
-        <div className="or"><span />or<span /></div>
-
-        <button className="demo-btn" onClick={() => { demo(); nav('/dashboard'); }}>
-          Explore Demo Website <small>No registration required</small>
-        </button>
 
         <p className="auth-foot">
           New to AarogyaGrid? <Link to="/signup">Create an account</Link>

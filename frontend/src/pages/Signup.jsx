@@ -10,8 +10,7 @@ export default function Signup() {
   const [password, setPassword] = useState('');
   const [err, setErr] = useState('');
   const [googleLoading, setGoogleLoading] = useState(false);
-  const [isGsiRendered, setIsGsiRendered] = useState(false);
-  const { signup, loginWithGoogle, demo } = useAuth();
+  const { signup, loginWithGoogle } = useAuth();
   const nav = useNavigate();
   const googleBtnRef = useRef(null);
 
@@ -191,12 +190,6 @@ export default function Signup() {
           </label>
           <button className="primary wide" style={{ marginTop: '10px' }}>Create Account</button>
         </form>
-
-        <div className="or"><span />or<span /></div>
-
-        <button className="demo-btn" onClick={() => { demo(); nav('/dashboard'); }}>
-          Continue with Demo <small>Skip registration</small>
-        </button>
 
         <p className="auth-foot">
           Already registered? <Link to="/login">Sign in</Link>
