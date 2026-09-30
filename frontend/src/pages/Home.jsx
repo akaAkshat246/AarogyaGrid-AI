@@ -106,11 +106,11 @@ export default function Home() {
             
             <div className="landing-hero-actions">
               {user ? (
-                <Link className="primary" to="/dashboard">Access Health Portal →</Link>
+                <Link className="primary" to="/dashboard">Go to Dashboard →</Link>
               ) : (
                 <>
-                  <Link className="primary" to="/login">Access Health Portal</Link>
-                  <a className="secondary" href="#features">Explore Capabilities</a>
+                  <Link className="primary" to="/login">Sign In to Dashboard →</Link>
+                  <Link className="secondary" to="/signup">Register Facility (Sign Up)</Link>
                 </>
               )}
             </div>
@@ -270,11 +270,14 @@ export default function Home() {
             <h2>Access the AarogyaGrid Operations Portal</h2>
             <p>Sign in with your certified health administrator credentials to access real-time telemetry and AI redistribution.</p>
           </div>
-          <div className="landing-cta-actions">
+          <div className="landing-cta-actions" style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
             {user ? (
               <Link className="primary" to="/dashboard">Go to Dashboard →</Link>
             ) : (
-              <Link className="primary" to="/login">Sign In to Portal →</Link>
+              <>
+                <Link className="primary" to="/login">Sign In to Dashboard →</Link>
+                <Link className="secondary" to="/signup">Create Account</Link>
+              </>
             )}
           </div>
         </section>
